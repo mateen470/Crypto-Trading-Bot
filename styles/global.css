@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+html,
+body {
+  /* background: #0f0f0f !important; */
+  /* background: #29084D !important; */
+  background-image: linear-gradient(
+    to bottom left,
+    #29084d 20%,
+    #830d5c80,
+    #191919
+  ) !important;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  color: #ffffff;
+  box-sizing: border-box;
+  /* color:  #29084d49 */
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+  body {
+    color: white;
+    background: black;
+  }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px #292929 inset !important;
+}
+
+input:-webkit-autofill {
+  -webkit-text-fill-color: #cccccc !important;
+}
