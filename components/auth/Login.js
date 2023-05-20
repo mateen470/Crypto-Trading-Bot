@@ -223,18 +223,16 @@ const Login = () => {
 
             <Button
               type="submit"
-              
               variant="contained"
-              
               sx={{ mt: 3, mb: 2,ml:16 ,
                 background: "linear-gradient(90deg, #790D83 0%, #7A5CFF 100%)",
                 color: "white",
+                fontWeight:'600',
                 "&:hover": {
                   background: "linear-gradient(90deg, #790D83 0%, #7A5CFF 100%)",
                   opacity: 0.9,
                 },
                 width:'8rem',
-                fontWeight:'600'
               }}
             >
               Sign In

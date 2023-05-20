@@ -255,28 +255,29 @@ const Register = () => {
                 </Box>
               </Grid>
             </Grid>
-            <Box
-              sx={{
-                mb: 5,
-                height: "40px",
-                width: "180px",
-                background: "linear-gradient(#790D83,#7A5CFF)",
-                borderRadius: "5px",
-                cursor: "pointer",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                transition: "transform 0.3s ease-in-out",
-                "&:hover": {
-                  transform: "scale(0.95)",
-                },
-              }}
-            >
+            <Box>
               <LoadingButton
                 type="submit"
                 loading={loading}
-                // fullWidth
-                // variant="contained"
+                sx={{
+                  mb: 5,
+                  height: "40px",
+                  width: "180px",
+                  background:
+                    "linear-gradient(90deg, #790D83 0%, #7A5CFF 100%)",
+                  color: "white",
+                  fontWeight: "600",
+                  borderRadius: "5px",
+                  cursor: "pointer",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  "&:hover": {
+                    background:
+                      "linear-gradient(90deg, #790D83 0%, #7A5CFF 100%)",
+                    opacity: 0.9,
+                  },
+                }}
               >
                 Sign Up
               </LoadingButton>
