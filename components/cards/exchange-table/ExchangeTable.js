@@ -469,10 +469,18 @@ const ExchangeTable = (props) => {
             <CircularProgress />
           </div>
         ) : (
-          <>
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              flexWrap: "wrap",
+              gap: "0.8rem",
+            }}
+          >
             <DataTable data={foundTableData} columns={columns} />
             <CryptocurrencyData data={tableData} />
-          </>
+          </Box>
         )}
       </Box>
       {/* </Container> */}

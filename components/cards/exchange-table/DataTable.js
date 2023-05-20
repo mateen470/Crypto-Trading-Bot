@@ -39,7 +39,7 @@ const DataTable = ({ data, columns, rowsPerPage = 10 }) => {
     wordWrap: "break-word",
     maxWidth: "100px",
     border: "none",
-    paddingLeft: "10px",
+    // paddingLeft: "10px",
     fontSize: "14px",
   };
   const firstTableCellStyle = {
@@ -47,7 +47,7 @@ const DataTable = ({ data, columns, rowsPerPage = 10 }) => {
     wordWrap: "break-word",
     maxWidth: "100px",
     border: "none",
-    paddingLeft: "20px",
+    // paddingLeft: "20px",
     borderTopLeftRadius: "15px",
     fontSize: "15px",
   };
@@ -56,7 +56,7 @@ const DataTable = ({ data, columns, rowsPerPage = 10 }) => {
     <Box
       sx={{
         width: "49vw",
-        height: '600px',
+        height: "600px",
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
@@ -80,8 +80,7 @@ const DataTable = ({ data, columns, rowsPerPage = 10 }) => {
                     pb: 2,
                   }}
                 >
-                  <Typography sx={{ fontSize: "13px", pr: 1 }}>
-                    {" "}
+                  <Typography sx={{ fontSize: "13px" }}>
                     {column.title}
                   </Typography>
                   {column.sortable && (
@@ -89,7 +88,7 @@ const DataTable = ({ data, columns, rowsPerPage = 10 }) => {
                       style={{
                         background: "none",
                         border: "none",
-                        margin: "0px",
+                        margin: "0px 0px 0px 5px",
                         padding: "0px",
                         cursor: "pointer",
                       }}
@@ -126,14 +125,16 @@ const DataTable = ({ data, columns, rowsPerPage = 10 }) => {
                     >
                       {column.field === "change" ? (
                         <Box
-                          sx={{ display: "flex", alignItems: "center", pl: 6 }}
+                          sx={{
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                          }}
                         >
                           {parseFloat(row[column.field]) === 0 ? (
                             <span
                               style={{ color: "white", paddingLeft: "15%" }}
-                            >
-                              {""}
-                            </span>
+                            ></span>
                           ) : row[column.field] !== 0 ? (
                             row[column.field] > 0 ? (
                               <span style={{ color: "green" }}>+</span>
@@ -143,9 +144,7 @@ const DataTable = ({ data, columns, rowsPerPage = 10 }) => {
                           ) : (
                             <span
                               style={{ color: "white", paddingLeft: "15%" }}
-                            >
-                              {""}
-                            </span>
+                            ></span>
                           )}
                           <Box
                             sx={{
@@ -164,9 +163,7 @@ const DataTable = ({ data, columns, rowsPerPage = 10 }) => {
                           {parseFloat(row[column.field]) === 0 ? (
                             <span
                               style={{ color: "white", paddingLeft: "15%" }}
-                            >
-                              {""}
-                            </span>
+                            ></span>
                           ) : row[column.field] !== 0 ? (
                             row[column.field] > 0 ? (
                               <NorthIcon
@@ -234,7 +231,11 @@ const DataTable = ({ data, columns, rowsPerPage = 10 }) => {
                         </Box>
                       ) : (
                         <Box
-                          sx={{ display: "flex", alignItems: "center", pl: 3 }}
+                          sx={{
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                          }}
                         >
                           {row[column.field]}
                         </Box>
@@ -251,7 +252,7 @@ const DataTable = ({ data, columns, rowsPerPage = 10 }) => {
       <Box sx={{ display: "flex", justifyContent: "flex-end", pb: 7, pr: 4 }}>
         <Box
           sx={{
-            marginTop:'2rem',
+            marginTop: "2rem",
             border: "0.7px solid grey",
             borderRadius: "3px",
             borderTopLeftRadius: "10px",

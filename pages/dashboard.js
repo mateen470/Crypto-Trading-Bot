@@ -259,23 +259,13 @@ const DashboardComponent = () => {
       />
 
       <AggregateAccountBalance />
+      <div>
+        <ExchangeTable assets={assets} handleRefresh={handleRefresh} />
+      </div>
 
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          flexWrap: "wrap",
-          gap: "1rem",
-        }}
-      >
-        <div>
-          <ExchangeTable assets={assets} handleRefresh={handleRefresh} />
-        </div>
-
-        {/* <div style={{ width: "50%", marginLeft: "5%" }}>
+      {/* <div style={{ width: "50%", marginLeft: "5%" }}>
           <TileChart />
         </div> */}
-      </div>
       {/* <Grid rowSpacing={2} columnSpacing={2} container>
         <Grid xs={12} lg={6} xl={4} item>
           <MyExchange />

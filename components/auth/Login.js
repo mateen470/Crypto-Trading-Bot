@@ -26,7 +26,7 @@ const ValidationTextField = styled(InputBase)(({ theme }) => ({
     marginTop: theme.spacing(3),
   },
   "& .MuiInputBase-input": {
-    borderRadius: 4,
+    // borderRadius: 4,
     position: "relative",
     // backgroundColor: "#292929",
     borderBottom: "1px solid #ced4da",
@@ -137,8 +137,8 @@ const Login = () => {
   return (
     <>
       <Container
-         sx={{
-          marginTop:'-5%',
+        sx={{
+          marginTop: "-5%",
           background: "rgba(255, 255, 255, 0.09)",
           borderRadius: 10,
           p: 1,
@@ -161,7 +161,7 @@ const Login = () => {
           }}
         >
           <Typography
-            sx={{ mt: 1 ,fontSize:'2.5rem'}}
+            sx={{ mt: 1, fontSize: "2.5rem" }}
             color="white"
             fontWeight={800}
             fontFamily="poppins"
@@ -172,13 +172,13 @@ const Login = () => {
           </Typography>
           {/* Log in to access your account */}
           <Typography
-              sx={{  mt: 1 }}
-              color="#cecece"
-              variant="h6"
-              fontSize='1rem'
-            >
-              Log in to access your account
-            </Typography>
+            sx={{ mt: 1 }}
+            color="#cecece"
+            variant="h6"
+            fontSize="1rem"
+          >
+            Log in to access your account
+          </Typography>
           <Box component="form" onSubmit={handleSubmit} sx={{ mt: 1 }}>
             {/* <Typography
               sx={{ marginBottom: 1, mt: 2 }}
@@ -224,15 +224,19 @@ const Login = () => {
             <Button
               type="submit"
               variant="contained"
-              sx={{ mt: 3, mb: 2,ml:16 ,
+              sx={{
+                mt: 3,
+                mb: 2,
+                ml: 16,
                 background: "linear-gradient(90deg, #790D83 0%, #7A5CFF 100%)",
                 color: "white",
-                fontWeight:'600',
+                fontWeight: "600",
                 "&:hover": {
-                  background: "linear-gradient(90deg, #790D83 0%, #7A5CFF 100%)",
+                  background:
+                    "linear-gradient(90deg, #790D83 0%, #7A5CFF 100%)",
                   opacity: 0.9,
                 },
-                width:'8rem',
+                width: "8rem",
               }}
             >
               Sign In
