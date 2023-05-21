@@ -255,22 +255,25 @@ export default function PrivateHeader({ title, current, Component }) {
               onClick={handleDrawerOpen}
               sx={{ left: selectedItem === 0 ? -7 : -3.5 }}
             >
-            <img style={{
-            cursor: "pointer",
-            flexWrap:'nowrap',
-            
-          }} 
-          src="https://i.postimg.cc/Fz5zMjxY/logove.png" width={30}></img>
-              
+              <img
+                style={{
+                  cursor: "pointer",
+                  flexWrap: "nowrap",
+                }}
+                src="https://i.postimg.cc/Fz5zMjxY/logove.png"
+                width={30}
+              ></img>
             </IconButton>
           ) : (
-            <img style={{
-              cursor: "pointer",
-              // flexWrap:'nowrap',
-              // marginLeft:'50%'
-              
-            }} 
-            src="https://i.postimg.cc/wBfYXdvq/Group-1000009101-1.png" width={130}></img>
+            <img
+              style={{
+                cursor: "pointer",
+                // flexWrap:'nowrap',
+                // marginLeft:'50%'
+              }}
+              src="https://i.postimg.cc/wBfYXdvq/Group-1000009101-1.png"
+              width={130}
+            ></img>
           )}
           {/* https://i.postimg.cc/HnrK4JN3/Group-1000009101.png */}
           {!open ? (

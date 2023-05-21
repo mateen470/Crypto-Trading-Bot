@@ -28,7 +28,8 @@ const DescriptionCard = ({ title, icon, data }) => {
       sx={{
         minWidth: 200,
         maxWidth: 600,
-        background: "linear-gradient(#310E4B,#420B5C )",
+        // background: "linear-gradient(#310E4B,#420B5C )",
+        background: "#790d832d",
         boxShadow: "none",
         borderRadius: "0px",
       }}

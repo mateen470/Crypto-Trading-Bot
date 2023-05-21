@@ -5,7 +5,7 @@ import Switch, { SwitchProps } from "@mui/material/Switch";
 import Card from "@mui/material/Card";
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
-import { Box } from "@mui/material";
+import { Box, CardContent, Checkbox } from "@mui/material";
 import SearchBar from "../../widgets/SearchBar";
 import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
@@ -22,7 +22,16 @@ import EditIcon from "@mui/icons-material/Edit";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
-import { Edit, Sort } from "../../../utils/icons";
+import {
+  Edit,
+  Sort,
+  DCAProfit,
+  DCABitcoin,
+  DCAEthereum,
+  DCALtc,
+  DCAStar,
+  DCADeal,
+} from "../../../utils/icons";
 import Modal from "@mui/material/Modal";
 import { getSession } from "next-auth/react";
 import { CircularProgress } from "@mui/material";
@@ -318,6 +327,8 @@ const BotsTable = () => {
   const [tableRow, setTableRow] = React.useState([]);
   const [searchByBotsName, setSearchByBotsName] = React.useState("");
   const [width, setWidth] = React.useState(globalThis?.innerWidth);
+  const [coinProfitValue, setCoinProfitValue] = React.useState(1234);
+  const [numberOfDeals, setNumberOfDeals] = React.useState(9);
 
   const [selectedRow, setSelectedRow] = React.useState([]);
   const [showModal, setShowModal] = React.useState(false);
@@ -326,7 +337,11 @@ const BotsTable = () => {
   const [loading, setLoading] = React.useState(true);
 
   const [exchangeArr, setExchangeArr] = React.useState([]);
+  const [checked, setChecked] = React.useState(false);
 
+  const handleSwitchChange = (event) => {
+    setChecked(event.target.checked);
+  };
   useEffect(() => {
     const handleResize = () => setWidth(globalThis?.innerWidth);
     globalThis?.addEventListener("resize", handleResize);
@@ -909,7 +924,7 @@ const BotsTable = () => {
       </Container>
       <Container
         sx={{
-          background: "#2C162F",
+          // background: "#2C162F",
           borderRadius: 2,
           p: 3,
           marginTop: 5,
@@ -1123,8 +1138,10 @@ const BotsTable = () => {
           </Grid>
         </Grid>
         {/* <Box sx={{ height: 709, disableGutters: true, width: "100%"}}> */}
-        <Box
+        {/* table starts*/}
+        {/* <Box
           sx={{
+     
             width: "100%",
             ...(width >= 1600 && {
               width: "100%",
@@ -1196,8 +1213,1090 @@ const BotsTable = () => {
               />
             )}
           </Box>
-        </Box>
+        </Box> */}
+        {/* table end */}
         {/* </Box> */}
+        {/* <Grid container spacing={1} mt={2}> */}
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: 0.5,
+            flexWrap: "wrap",
+            mt: 3,
+          }}
+        >
+          {/* <Grid item xs={4}> */}
+          <Box sx={{ width: "28.5vw" }}>
+            <Card
+              sx={{
+                minWidth: 250,
+                background: "linear-gradient(#3D273F,#2C252C)",
+                borderRadius: "8px",
+                minHeight: 360,
+              }}
+            >
+              <CardContent
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                }}
+              >
+                <Box
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                  }}
+                >
+                  <Box sx={{ display: "flex", alignItems: "center" }}>
+                    <Box
+                      sx={{
+                        background: "#463746",
+                        borderRadius: "50%",
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        mx: 1,
+                        px: 1.2,
+                        py: 1,
+                      }}
+                    >
+                      <DCABitcoin />
+                    </Box>
+                    <Box
+                      sx={{
+                        display: "flex",
+                        justifyContent: "flex-start",
+                        flexDirection: "column",
+                      }}
+                    >
+                      <Typography fontWeight={700}>
+                        BTC Short Bot Vector Candles
+                      </Typography>
+                      <Typography fontSize={"0.9rem"}>Binance</Typography>
+                    </Box>
+                  </Box>
+                  <Box>
+                    <Checkbox
+                      style={{
+                        color: "white",
+                        "&$checked": {
+                          color: "white",
+                        },
+                      }}
+                    />
+                  </Box>
+                </Box>
+
+                <Box
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                    mt: 1,
+                  }}
+                >
+                  <Box
+                    sx={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: 2,
+                    }}
+                  >
+                    <Box
+                      sx={{
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        background: "#631525",
+                        px: 1.5,
+                        borderRadius: 1,
+                      }}
+                    >
+                      <Typography fontSize={"0.8rem"}>Short</Typography>
+                    </Box>
+                    <Box
+                      sx={{ display: "flex", alignItems: "center", gap: 0.5 }}
+                    >
+                      <DCAProfit />
+                      <Typography
+                        sx={{
+                          color: coinProfitValue > 0 ? "#5EFF12" : "red",
+                          fontWeight: 600,
+                        }}
+                      >
+                        {coinProfitValue > 0 ? "+" : "-"}
+                      </Typography>
+                      <Typography
+                        sx={{
+                          color: coinProfitValue > 0 ? "#5EFF12" : "red",
+                          fontWeight: 600,
+                        }}
+                      >
+                        {coinProfitValue}
+                      </Typography>
+                      <Typography
+                        sx={{
+                          color: coinProfitValue > 0 ? "#5EFF12" : "red",
+                          fontWeight: 600,
+                        }}
+                      >
+                        {"$"}
+                      </Typography>
+                    </Box>
+                    <Box
+                      sx={{ display: "flex", alignItems: "center", gap: 0.5 }}
+                    >
+                      <DCADeal />
+                      <Typography fontWeight={600} color={"#FFA412"}>
+                        {numberOfDeals}
+                      </Typography>
+                    </Box>
+                  </Box>
+                  <Box mr={1}>
+                    <DCAStar />
+                  </Box>
+                </Box>
+
+                <Grid container mt={3} spacing={1}>
+                  <Grid item xs={6}>
+                    <Box
+                      sx={{
+                        background: "#3F2B3F",
+                        borderRadius: 3,
+                        boxShadow: "1px 2px 1px 1px rgba(0, 0, 0, 0.268)",
+                        minWidth: 125,
+                        height: width > 1600 ? "12rem" : "15rem",
+
+                        p: 1,
+                      }}
+                    >
+                      <Typography
+                        fontWeight={700}
+                        color={"#ffffffbd"}
+                        mb={1}
+                        fontSize={"1.2rem"}
+                        sx={{ textShadow: "1px 5px 5px rgba(0, 0, 0, 0.5)" }}
+                      >
+                        Cycle 1
+                      </Typography>
+                      <Box
+                        sx={{
+                          display: width > 1600 ? "flex" : "",
+                          gap: width > 1600 ? 2 : "",
+                        }}
+                      >
+                        <Box>
+                          <Typography
+                            color={"#ffffffbd"}
+                            borderBottom={"1px solid #ffffffbd "}
+                            fontSize={"0.7rem"}
+                            my={0.5}
+                          >
+                            Max Order : 10
+                          </Typography>
+                          <Typography
+                            color={"#ffffffbd"}
+                            borderBottom={"1px solid #ffffffbd "}
+                            fontSize={"0.7rem"}
+                            my={0.5}
+                          >
+                            Max Volume : 200 USDT
+                          </Typography>
+                          <Typography
+                            color={"#ffffffbd"}
+                            borderBottom={"1px solid #ffffffbd "}
+                            fontSize={"0.7rem"}
+                            my={0.5}
+                          >
+                            Lead Indicator : VC
+                          </Typography>
+                        </Box>
+
+                        <Box>
+                          <Typography
+                            color={"#ffffffbd"}
+                            borderBottom={"1px solid #ffffffbd "}
+                            fontSize={"0.7rem"}
+                            my={0.5}
+                          >
+                            Filter Indicator : EMA
+                          </Typography>
+                          <Typography
+                            color={"#ffffffbd"}
+                            borderBottom={"1px solid #ffffffbd "}
+                            fontSize={"0.7rem"}
+                            my={0.5}
+                          >
+                            TP: Dynamic
+                          </Typography>
+                          <Typography
+                            color={"#ffffffbd"}
+                            borderBottom={"1px solid #ffffffbd "}
+                            fontSize={"0.7rem"}
+                            my={0.5}
+                          >
+                            SL :
+                          </Typography>
+                        </Box>
+                      </Box>
+                    </Box>
+                  </Grid>
+                  <Grid item xs={6}>
+                    <Box
+                      sx={{
+                        background: "#3F2B3F",
+                        borderRadius: 3,
+                        boxShadow: "1px 2px 1px 1px rgba(0, 0, 0, 0.268)",
+                        minWidth: 125,
+                        height: width > 1600 ? "12rem" : "15rem",
+                        p: 1,
+                      }}
+                    >
+                      <Box
+                        sx={{
+                          display: width > 1600 ? "flex" : "",
+                          gap: width > 1600 ? 2 : "",
+                        }}
+                      ></Box>
+                    </Box>
+                  </Grid>
+                  <Grid item xs={6}>
+                    <Box
+                      sx={{
+                        background: "#3F2B3F",
+                        borderRadius: 3,
+                        boxShadow: "1px 2px 1px 1px rgba(0, 0, 0, 0.268)",
+                        minWidth: 125,
+                        height: width > 1600 ? "12rem" : "15rem",
+                        p: 1,
+                      }}
+                    >
+                      <Box
+                        sx={{
+                          display: width > 1600 ? "flex" : "",
+                          gap: width > 1600 ? 2 : "",
+                        }}
+                      ></Box>
+                    </Box>
+                  </Grid>
+                  <Grid item xs={6}>
+                    <Box
+                      sx={{
+                        background: "#3F2B3F",
+                        borderRadius: 3,
+                        boxShadow: "1px 2px 1px 1px rgba(0, 0, 0, 0.268)",
+                        minWidth: 125,
+                        height: width > 1600 ? "12rem" : "15rem",
+                        p: 1,
+                      }}
+                    >
+                      <Box
+                        sx={{
+                          display: width > 1600 ? "flex" : "",
+                          gap: width > 1600 ? 2 : "",
+                        }}
+                      ></Box>
+                    </Box>
+                  </Grid>
+                </Grid>
+
+                <Box
+                  sx={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    position: "relative",
+                    mt: 3,
+                  }}
+                >
+                  <Button
+                    sx={{
+                      border: "1px solid #40343F",
+                      background: "linear-gradient(to left,#32222D,#342933)",
+                      borderTopRightRadius: 0,
+                      borderBottomRightRadius: 0,
+                      borderTopLeftRadius: 10,
+                      borderBottomLeftRadius: 10,
+                      textTransform: "none",
+                      color: "white",
+                      py: 0.3,
+                    }}
+                  >
+                    Copy
+                  </Button>
+                  <Button
+                    sx={{
+                      border: "1px solid #40343F",
+                      background: "linear-gradient(to left,#32222D,#342933)",
+                      borderTopRightRadius: 0,
+                      borderBottomRightRadius: 0,
+                      borderTopLeftRadius: 0,
+                      borderBottomLeftRadius: 0,
+                      textTransform: "none",
+                      color: "white",
+                      py: 0.3,
+                    }}
+                  >
+                    Share
+                  </Button>
+                  <Button
+                    sx={{
+                      border: "1px solid #40343F",
+                      background: "linear-gradient(to left,#32222D,#342933)",
+                      borderTopRightRadius: 10,
+                      borderBottomRightRadius: 10,
+                      borderTopLeftRadius: 0,
+                      borderBottomLeftRadius: 0,
+                      textTransform: "none",
+                      color: "white",
+                      py: 0.3,
+                    }}
+                  >
+                    Edit
+                  </Button>
+                  <Box
+                    sx={{
+                      position: "absolute",
+                      right: width < 1050 ? -25 : -10,
+                    }}
+                  >
+                    <Switch
+                      checked={checked}
+                      onChange={handleSwitchChange}
+                      name="customSwitch"
+                      sx={{
+                        "& .MuiSwitch-thumb": {
+                          bgcolor: "#FFFFFF",
+                        },
+                        "& .MuiSwitch-track": {
+                          background: checked
+                            ? "linear-gradient(to right,#790D83,#7A5CFF)"
+                            : "#9E9E9E",
+                        },
+                      }}
+                    />
+                  </Box>
+                </Box>
+              </CardContent>
+            </Card>
+          </Box>
+          {/* <Grid item xs={4}> */}
+          <Box sx={{ width: "28.5vw" }}>
+            <Card
+              sx={{
+                minWidth: 250,
+                background: "linear-gradient(#3D273F,#2C252C)",
+                borderRadius: "8px",
+                minHeight: 360,
+              }}
+            >
+              <CardContent
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                }}
+              >
+                <Box
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                  }}
+                >
+                  <Box sx={{ display: "flex", alignItems: "center" }}>
+                    <Box
+                      sx={{
+                        background: "#463746",
+                        borderRadius: "50%",
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        mx: 1,
+                        px: 2,
+                        py: 1,
+                      }}
+                    >
+                      <DCAEthereum />
+                    </Box>
+                    <Box
+                      sx={{
+                        display: "flex",
+                        justifyContent: "flex-start",
+                        flexDirection: "column",
+                      }}
+                    >
+                      <Typography fontWeight={700}>
+                        ETH Short Bot Vector Candles
+                      </Typography>
+                      <Typography fontSize={"0.9rem"}>Binance</Typography>
+                    </Box>
+                  </Box>
+                  <Box>
+                    <Checkbox
+                      style={{
+                        color: "white",
+                        "&$checked": {
+                          color: "white",
+                        },
+                      }}
+                    />
+                  </Box>
+                </Box>
+
+                <Box
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                    mt: 1,
+                  }}
+                >
+                  <Box
+                    sx={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: 2,
+                    }}
+                  >
+                    <Box
+                      sx={{
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        background: "#631525",
+                        px: 1.5,
+                        borderRadius: 1,
+                      }}
+                    >
+                      <Typography fontSize={"0.8rem"}>Short</Typography>
+                    </Box>
+                    <Box
+                      sx={{ display: "flex", alignItems: "center", gap: 0.5 }}
+                    >
+                      <DCAProfit />
+                      <Typography
+                        sx={{
+                          color: coinProfitValue > 0 ? "#5EFF12" : "red",
+                          fontWeight: 600,
+                        }}
+                      >
+                        {coinProfitValue > 0 ? "+" : "-"}
+                      </Typography>
+                      <Typography
+                        sx={{
+                          color: coinProfitValue > 0 ? "#5EFF12" : "red",
+                          fontWeight: 600,
+                        }}
+                      >
+                        {coinProfitValue}
+                      </Typography>
+                      <Typography
+                        sx={{
+                          color: coinProfitValue > 0 ? "#5EFF12" : "red",
+                          fontWeight: 600,
+                        }}
+                      >
+                        {"$"}
+                      </Typography>
+                    </Box>
+                    <Box
+                      sx={{ display: "flex", alignItems: "center", gap: 0.5 }}
+                    >
+                      <DCADeal />
+                      <Typography fontWeight={600} color={"#FFA412"}>
+                        {numberOfDeals}
+                      </Typography>
+                    </Box>
+                  </Box>
+                  <Box mr={1}>
+                    <DCAStar />
+                  </Box>
+                </Box>
+
+                <Grid container mt={3} spacing={1}>
+                  <Grid item xs={6}>
+                    <Box
+                      sx={{
+                        background: "#3F2B3F",
+                        borderRadius: 3,
+                        boxShadow: "1px 2px 1px 1px rgba(0, 0, 0, 0.268)",
+                        minWidth: 125,
+                        height: width > 1600 ? "12rem" : "15rem",
+
+                        p: 1,
+                      }}
+                    >
+                      <Typography
+                        fontWeight={700}
+                        color={"#ffffffbd"}
+                        mb={1}
+                        fontSize={"1.2rem"}
+                        sx={{ textShadow: "1px 5px 5px rgba(0, 0, 0, 0.5)" }}
+                      >
+                        Cycle 1
+                      </Typography>
+                      <Box
+                        sx={{
+                          display: width > 1600 ? "flex" : "",
+                          gap: width > 1600 ? 2 : "",
+                        }}
+                      >
+                        <Box>
+                          <Typography
+                            color={"#ffffffbd"}
+                            borderBottom={"1px solid #ffffffbd "}
+                            fontSize={"0.7rem"}
+                            my={0.5}
+                          >
+                            Max Order : 10
+                          </Typography>
+                          <Typography
+                            color={"#ffffffbd"}
+                            borderBottom={"1px solid #ffffffbd "}
+                            fontSize={"0.7rem"}
+                            my={0.5}
+                          >
+                            Max Volume : 200 USDT
+                          </Typography>
+                          <Typography
+                            color={"#ffffffbd"}
+                            borderBottom={"1px solid #ffffffbd "}
+                            fontSize={"0.7rem"}
+                            my={0.5}
+                          >
+                            Lead Indicator : VC
+                          </Typography>
+                        </Box>
+
+                        <Box>
+                          <Typography
+                            color={"#ffffffbd"}
+                            borderBottom={"1px solid #ffffffbd "}
+                            fontSize={"0.7rem"}
+                            my={0.5}
+                          >
+                            Filter Indicator : EMA
+                          </Typography>
+                          <Typography
+                            color={"#ffffffbd"}
+                            borderBottom={"1px solid #ffffffbd "}
+                            fontSize={"0.7rem"}
+                            my={0.5}
+                          >
+                            TP: Dynamic
+                          </Typography>
+                          <Typography
+                            color={"#ffffffbd"}
+                            borderBottom={"1px solid #ffffffbd "}
+                            fontSize={"0.7rem"}
+                            my={0.5}
+                          >
+                            SL :
+                          </Typography>
+                        </Box>
+                      </Box>
+                    </Box>
+                  </Grid>
+                  <Grid item xs={6}>
+                    <Box
+                      sx={{
+                        background: "#3F2B3F",
+                        borderRadius: 3,
+                        boxShadow: "1px 2px 1px 1px rgba(0, 0, 0, 0.268)",
+                        minWidth: 125,
+                        height: width > 1600 ? "12rem" : "15rem",
+                        p: 1,
+                      }}
+                    >
+                      <Box
+                        sx={{
+                          display: width > 1600 ? "flex" : "",
+                          gap: width > 1600 ? 2 : "",
+                        }}
+                      ></Box>
+                    </Box>
+                  </Grid>
+                  <Grid item xs={6}>
+                    <Box
+                      sx={{
+                        background: "#3F2B3F",
+                        borderRadius: 3,
+                        boxShadow: "1px 2px 1px 1px rgba(0, 0, 0, 0.268)",
+                        minWidth: 125,
+                        height: width > 1600 ? "12rem" : "15rem",
+                        p: 1,
+                      }}
+                    >
+                      <Box
+                        sx={{
+                          display: width > 1600 ? "flex" : "",
+                          gap: width > 1600 ? 2 : "",
+                        }}
+                      ></Box>
+                    </Box>
+                  </Grid>
+                  <Grid item xs={6}>
+                    <Box
+                      sx={{
+                        background: "#3F2B3F",
+                        borderRadius: 3,
+                        boxShadow: "1px 2px 1px 1px rgba(0, 0, 0, 0.268)",
+                        minWidth: 125,
+                        height: width > 1600 ? "12rem" : "15rem",
+                        p: 1,
+                      }}
+                    >
+                      <Box
+                        sx={{
+                          display: width > 1600 ? "flex" : "",
+                          gap: width > 1600 ? 2 : "",
+                        }}
+                      ></Box>
+                    </Box>
+                  </Grid>
+                </Grid>
+
+                <Box
+                  sx={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    position: "relative",
+                    mt: 3,
+                  }}
+                >
+                  <Button
+                    sx={{
+                      border: "1px solid #40343F",
+                      background: "linear-gradient(to left,#32222D,#342933)",
+                      borderTopRightRadius: 0,
+                      borderBottomRightRadius: 0,
+                      borderTopLeftRadius: 10,
+                      borderBottomLeftRadius: 10,
+                      textTransform: "none",
+                      color: "white",
+                      py: 0.3,
+                    }}
+                  >
+                    Copy
+                  </Button>
+                  <Button
+                    sx={{
+                      border: "1px solid #40343F",
+                      background: "linear-gradient(to left,#32222D,#342933)",
+                      borderTopRightRadius: 0,
+                      borderBottomRightRadius: 0,
+                      borderTopLeftRadius: 0,
+                      borderBottomLeftRadius: 0,
+                      textTransform: "none",
+                      color: "white",
+                      py: 0.3,
+                    }}
+                  >
+                    Share
+                  </Button>
+                  <Button
+                    sx={{
+                      border: "1px solid #40343F",
+                      background: "linear-gradient(to left,#32222D,#342933)",
+                      borderTopRightRadius: 10,
+                      borderBottomRightRadius: 10,
+                      borderTopLeftRadius: 0,
+                      borderBottomLeftRadius: 0,
+                      textTransform: "none",
+                      color: "white",
+                      py: 0.3,
+                    }}
+                  >
+                    Edit
+                  </Button>
+                  <Box
+                    sx={{
+                      position: "absolute",
+                      right: width < 1050 ? -25 : -10,
+                    }}
+                  >
+                    <Switch
+                      checked={checked}
+                      onChange={handleSwitchChange}
+                      name="customSwitch"
+                      sx={{
+                        "& .MuiSwitch-thumb": {
+                          bgcolor: "#FFFFFF",
+                        },
+                        "& .MuiSwitch-track": {
+                          background: checked
+                            ? "linear-gradient(to right,#790D83,#7A5CFF)"
+                            : "#9E9E9E",
+                        },
+                      }}
+                    />
+                  </Box>
+                </Box>
+              </CardContent>
+            </Card>
+          </Box>
+          {/* <Grid item xs={4}> */}
+          <Box sx={{ width: "28.5vw" }}>
+            <Card
+              sx={{
+                minWidth: 250,
+                background: "linear-gradient(#3D273F,#2C252C)",
+                borderRadius: "8px",
+                minHeight: 360,
+              }}
+            >
+              <CardContent
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                }}
+              >
+                <Box
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                  }}
+                >
+                  <Box sx={{ display: "flex", alignItems: "center" }}>
+                    <Box
+                      sx={{
+                        background: "#463746",
+                        borderRadius: "50%",
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        mx: 1,
+                        px: 1.2,
+                        pt: 1.5,
+                        pb: 0.5,
+                      }}
+                    >
+                      <DCALtc />
+                    </Box>
+                    <Box
+                      sx={{
+                        display: "flex",
+                        justifyContent: "flex-start",
+                        flexDirection: "column",
+                      }}
+                    >
+                      <Typography fontWeight={700}>
+                        LTC Short Bot Vector Candles
+                      </Typography>
+                      <Typography fontSize={"0.9rem"}>Binance</Typography>
+                    </Box>
+                  </Box>
+                  <Box>
+                    <Checkbox
+                      style={{
+                        color: "white",
+                        "&$checked": {
+                          color: "white",
+                        },
+                      }}
+                    />
+                  </Box>
+                </Box>
+
+                <Box
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                    mt: 1,
+                  }}
+                >
+                  <Box
+                    sx={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: 2,
+                    }}
+                  >
+                    <Box
+                      sx={{
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        background: "#631525",
+                        px: 1.5,
+                        borderRadius: 1,
+                      }}
+                    >
+                      <Typography fontSize={"0.8rem"}>Short</Typography>
+                    </Box>
+                    <Box
+                      sx={{ display: "flex", alignItems: "center", gap: 0.5 }}
+                    >
+                      <DCAProfit />
+                      <Typography
+                        sx={{
+                          color: coinProfitValue > 0 ? "#5EFF12" : "red",
+                          fontWeight: 600,
+                        }}
+                      >
+                        {coinProfitValue > 0 ? "+" : "-"}
+                      </Typography>
+                      <Typography
+                        sx={{
+                          color: coinProfitValue > 0 ? "#5EFF12" : "red",
+                          fontWeight: 600,
+                        }}
+                      >
+                        {coinProfitValue}
+                      </Typography>
+                      <Typography
+                        sx={{
+                          color: coinProfitValue > 0 ? "#5EFF12" : "red",
+                          fontWeight: 600,
+                        }}
+                      >
+                        {"$"}
+                      </Typography>
+                    </Box>
+                    <Box
+                      sx={{ display: "flex", alignItems: "center", gap: 0.5 }}
+                    >
+                      <DCADeal />
+                      <Typography fontWeight={600} color={"#FFA412"}>
+                        {numberOfDeals}
+                      </Typography>
+                    </Box>
+                  </Box>
+                  <Box mr={1}>
+                    <DCAStar />
+                  </Box>
+                </Box>
+
+                <Grid container mt={3} spacing={1}>
+                  <Grid item xs={6}>
+                    <Box
+                      sx={{
+                        background: "#3F2B3F",
+                        borderRadius: 3,
+                        boxShadow: "1px 2px 1px 1px rgba(0, 0, 0, 0.268)",
+                        minWidth: 125,
+                        height: width > 1600 ? "12rem" : "15rem",
+
+                        p: 1,
+                      }}
+                    >
+                      <Typography
+                        fontWeight={700}
+                        color={"#ffffffbd"}
+                        mb={1}
+                        fontSize={"1.2rem"}
+                        sx={{ textShadow: "1px 5px 5px rgba(0, 0, 0, 0.5)" }}
+                      >
+                        Cycle 1
+                      </Typography>
+                      <Box
+                        sx={{
+                          display: width > 1600 ? "flex" : "",
+                          gap: width > 1600 ? 2 : "",
+                        }}
+                      >
+                        <Box>
+                          <Typography
+                            color={"#ffffffbd"}
+                            borderBottom={"1px solid #ffffffbd "}
+                            fontSize={"0.7rem"}
+                            my={0.5}
+                          >
+                            Max Order : 10
+                          </Typography>
+                          <Typography
+                            color={"#ffffffbd"}
+                            borderBottom={"1px solid #ffffffbd "}
+                            fontSize={"0.7rem"}
+                            my={0.5}
+                          >
+                            Max Volume : 200 USDT
+                          </Typography>
+                          <Typography
+                            color={"#ffffffbd"}
+                            borderBottom={"1px solid #ffffffbd "}
+                            fontSize={"0.7rem"}
+                            my={0.5}
+                          >
+                            Lead Indicator : VC
+                          </Typography>
+                        </Box>
+
+                        <Box>
+                          <Typography
+                            color={"#ffffffbd"}
+                            borderBottom={"1px solid #ffffffbd "}
+                            fontSize={"0.7rem"}
+                            my={0.5}
+                          >
+                            Filter Indicator : EMA
+                          </Typography>
+                          <Typography
+                            color={"#ffffffbd"}
+                            borderBottom={"1px solid #ffffffbd "}
+                            fontSize={"0.7rem"}
+                            my={0.5}
+                          >
+                            TP: Dynamic
+                          </Typography>
+                          <Typography
+                            color={"#ffffffbd"}
+                            borderBottom={"1px solid #ffffffbd "}
+                            fontSize={"0.7rem"}
+                            my={0.5}
+                          >
+                            SL :
+                          </Typography>
+                        </Box>
+                      </Box>
+                    </Box>
+                  </Grid>
+                  <Grid item xs={6}>
+                    <Box
+                      sx={{
+                        background: "#3F2B3F",
+                        borderRadius: 3,
+                        boxShadow: "1px 2px 1px 1px rgba(0, 0, 0, 0.268)",
+                        minWidth: 125,
+                        height: width > 1600 ? "12rem" : "15rem",
+                        p: 1,
+                      }}
+                    >
+                      <Box
+                        sx={{
+                          display: width > 1600 ? "flex" : "",
+                          gap: width > 1600 ? 2 : "",
+                        }}
+                      ></Box>
+                    </Box>
+                  </Grid>
+                  <Grid item xs={6}>
+                    <Box
+                      sx={{
+                        background: "#3F2B3F",
+                        borderRadius: 3,
+                        boxShadow: "1px 2px 1px 1px rgba(0, 0, 0, 0.268)",
+                        minWidth: 125,
+                        height: width > 1600 ? "12rem" : "15rem",
+                        p: 1,
+                      }}
+                    >
+                      <Box
+                        sx={{
+                          display: width > 1600 ? "flex" : "",
+                          gap: width > 1600 ? 2 : "",
+                        }}
+                      ></Box>
+                    </Box>
+                  </Grid>
+                  <Grid item xs={6}>
+                    <Box
+                      sx={{
+                        background: "#3F2B3F",
+                        borderRadius: 3,
+                        boxShadow: "1px 2px 1px 1px rgba(0, 0, 0, 0.268)",
+                        minWidth: 125,
+                        height: width > 1600 ? "12rem" : "15rem",
+                        p: 1,
+                      }}
+                    >
+                      <Box
+                        sx={{
+                          display: width > 1600 ? "flex" : "",
+                          gap: width > 1600 ? 2 : "",
+                        }}
+                      ></Box>
+                    </Box>
+                  </Grid>
+                </Grid>
+
+                <Box
+                  sx={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    position: "relative",
+                    mt: 3,
+                  }}
+                >
+                  <Button
+                    sx={{
+                      border: "1px solid #40343F",
+                      background: "linear-gradient(to left,#32222D,#342933)",
+                      borderTopRightRadius: 0,
+                      borderBottomRightRadius: 0,
+                      borderTopLeftRadius: 10,
+                      borderBottomLeftRadius: 10,
+                      textTransform: "none",
+                      color: "white",
+                      py: 0.3,
+                    }}
+                  >
+                    Copy
+                  </Button>
+                  <Button
+                    sx={{
+                      border: "1px solid #40343F",
+                      background: "linear-gradient(to left,#32222D,#342933)",
+                      borderTopRightRadius: 0,
+                      borderBottomRightRadius: 0,
+                      borderTopLeftRadius: 0,
+                      borderBottomLeftRadius: 0,
+                      textTransform: "none",
+                      color: "white",
+                      py: 0.3,
+                    }}
+                  >
+                    Share
+                  </Button>
+                  <Button
+                    sx={{
+                      border: "1px solid #40343F",
+                      background: "linear-gradient(to left,#32222D,#342933)",
+                      borderTopRightRadius: 10,
+                      borderBottomRightRadius: 10,
+                      borderTopLeftRadius: 0,
+                      borderBottomLeftRadius: 0,
+                      textTransform: "none",
+                      color: "white",
+                      py: 0.3,
+                    }}
+                  >
+                    Edit
+                  </Button>
+                  <Box
+                    sx={{
+                      position: "absolute",
+                      right: width < 1050 ? -25 : -10,
+                    }}
+                  >
+                    <Switch
+                      checked={checked}
+                      onChange={handleSwitchChange}
+                      name="customSwitch"
+                      sx={{
+                        "& .MuiSwitch-thumb": {
+                          bgcolor: "#FFFFFF",
+                        },
+                        "& .MuiSwitch-track": {
+                          background: checked
+                            ? "linear-gradient(to right,#790D83,#7A5CFF)"
+                            : "#9E9E9E",
+                        },
+                      }}
+                    />
+                  </Box>
+                </Box>
+              </CardContent>
+            </Card>
+          </Box>
+        </Box>
       </Container>
     </>
   );
