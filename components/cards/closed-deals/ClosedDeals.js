@@ -5,14 +5,18 @@ import Grid from "@mui/material/Grid";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import { YellowHandShakeBig } from "../../../utils/icons";
-import { useSelector } from "react-redux";
 import { getSession } from "next-auth/react";
 
 const ClosedDeals = () => {
-  const widthAbove1600 = useSelector((state) => state.dashboardWidth.value);
-
+  const [width, setWidth] = useState(globalThis?.innerWidth);
   const [closedDeals, setClosedDeals] = useState(0);
   const [activeDeals, setActiveDeals] = useState(0);
+
+  useEffect(() => {
+    const handleResize = () => setWidth(globalThis?.innerWidth);
+    globalThis?.addEventListener("resize", handleResize);
+    return () => globalThis?.removeEventListener("resize", handleResize);
+  }, []);
   useEffect(() => {
     fetchAndSetActiveStrategy();
   }, []);
@@ -50,8 +54,8 @@ const ClosedDeals = () => {
     <Card
       sx={{
         minWidth: 200,
-        minHeight: widthAbove1600 < 1600 ? 120 : 120,
-        maxHeight: widthAbove1600 < 1600 ? "auto" : 357,
+        minHeight: 120,
+        maxHeight: width < 1600 ? "auto" : 357,
         background: "#2D1537",
         borderRadius: "8px",
       }}

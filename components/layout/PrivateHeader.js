@@ -180,36 +180,17 @@ export default function PrivateHeader({ title, current, Component }) {
   React.useEffect(() => {
     setSelectedItem(() => getSelectedIndexFromUrl());
   }, [getSelectedIndexFromUrl()]);
+
   React.useEffect(() => {
-    const handleResize = () => {
-      dispatch(setWidth(window.innerWidth));
+    const handleOpen = () => {
+      dispatch(setWidth(open));
     };
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, [dispatch]);
-  React.useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth < 1600) {
-        setOpen(false);
-      } else {
-        setOpen(true);
-      }
-    };
-    dispatch(
-      setWidth({
-        value: open,
-      })
-    );
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, [open]);
+    handleOpen();
+  }, [dispatch, open]);
 
   const handleDrawerOpen = () => {
     setOpen(true);
   };
-
   const handleDrawerClose = () => {
     setOpen(false);
     setToggle(false);

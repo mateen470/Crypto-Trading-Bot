@@ -36,6 +36,7 @@ import Modal from "@mui/material/Modal";
 import { getSession } from "next-auth/react";
 import { CircularProgress } from "@mui/material";
 import { useRouter } from "next/router";
+import { useSelector } from "react-redux";
 
 const useStyles = makeStyles(() => ({
   input: {
@@ -337,10 +338,20 @@ const BotsTable = () => {
   const [loading, setLoading] = React.useState(true);
 
   const [exchangeArr, setExchangeArr] = React.useState([]);
-  const [checked, setChecked] = React.useState(false);
+  const [btcchecked, setBtcChecked] = React.useState(false);
+  const [ethchecked, setEthChecked] = React.useState(false);
+  const [ltcchecked, setLtcChecked] = React.useState(false);
+
+  const isDrawerOpen = useSelector((state) => state.dashboardWidth.value);
 
   const handleSwitchChange = (event) => {
-    setChecked(event.target.checked);
+    setBtcChecked(event.target.checked);
+  };
+  const handleLtcSwitchChange = (event) => {
+    setLtcChecked(event.target.checked);
+  };
+  const handleEthSwitchChange = (event) => {
+    setEthChecked(event.target.checked);
   };
   useEffect(() => {
     const handleResize = () => setWidth(globalThis?.innerWidth);
@@ -1216,19 +1227,17 @@ const BotsTable = () => {
         </Box> */}
         {/* table end */}
         {/* </Box> */}
-        {/* <Grid container spacing={1} mt={2}> */}
-        <Box
+        {/* <Box
           sx={{
             display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            gap: 0.5,
+            // justifyContent:"space-evenly",
             flexWrap: "wrap",
-            mt: 3,
+            gap: "0.4rem",
           }}
-        >
-          {/* <Grid item xs={4}> */}
-          <Box sx={{ width: "28.5vw" }}>
+        > */}
+        <Grid container spacing={1} mt={2}>
+          {/* <Box sx={{  mt: 3 }}> */}
+          <Grid item xs={isDrawerOpen && width < 1600 ? 6 : 4}>
             <Card
               sx={{
                 minWidth: 250,
@@ -1259,7 +1268,7 @@ const BotsTable = () => {
                         justifyContent: "center",
                         alignItems: "center",
                         mx: 1,
-                        px: 1.2,
+                        px: 1.7,
                         py: 1,
                       }}
                     >
@@ -1564,7 +1573,7 @@ const BotsTable = () => {
                     }}
                   >
                     <Switch
-                      checked={checked}
+                      checked={btcchecked}
                       onChange={handleSwitchChange}
                       name="customSwitch"
                       sx={{
@@ -1572,7 +1581,7 @@ const BotsTable = () => {
                           bgcolor: "#FFFFFF",
                         },
                         "& .MuiSwitch-track": {
-                          background: checked
+                          background: btcchecked
                             ? "linear-gradient(to right,#790D83,#7A5CFF)"
                             : "#9E9E9E",
                         },
@@ -1582,9 +1591,9 @@ const BotsTable = () => {
                 </Box>
               </CardContent>
             </Card>
-          </Box>
-          {/* <Grid item xs={4}> */}
-          <Box sx={{ width: "28.5vw" }}>
+          </Grid>
+          <Grid item xs={isDrawerOpen && width < 1600 ? 6 : 4}>
+            {/* <Box sx={{ width: "28.5vw", mt: 3 }}> */}
             <Card
               sx={{
                 minWidth: 250,
@@ -1920,15 +1929,15 @@ const BotsTable = () => {
                     }}
                   >
                     <Switch
-                      checked={checked}
-                      onChange={handleSwitchChange}
+                      checked={ethchecked}
+                      onChange={handleEthSwitchChange}
                       name="customSwitch"
                       sx={{
                         "& .MuiSwitch-thumb": {
                           bgcolor: "#FFFFFF",
                         },
                         "& .MuiSwitch-track": {
-                          background: checked
+                          background: ethchecked
                             ? "linear-gradient(to right,#790D83,#7A5CFF)"
                             : "#9E9E9E",
                         },
@@ -1938,9 +1947,8 @@ const BotsTable = () => {
                 </Box>
               </CardContent>
             </Card>
-          </Box>
-          {/* <Grid item xs={4}> */}
-          <Box sx={{ width: "28.5vw" }}>
+          </Grid>
+          <Grid item xs={isDrawerOpen && width < 1600 ? 6 : 4}>
             <Card
               sx={{
                 minWidth: 250,
@@ -1971,9 +1979,9 @@ const BotsTable = () => {
                         justifyContent: "center",
                         alignItems: "center",
                         mx: 1,
-                        px: 1.2,
+                        px: 1,
                         pt: 1.5,
-                        pb: 0.5,
+                        pb: 1,
                       }}
                     >
                       <DCALtc />
@@ -2277,15 +2285,15 @@ const BotsTable = () => {
                     }}
                   >
                     <Switch
-                      checked={checked}
-                      onChange={handleSwitchChange}
+                      checked={ltcchecked}
+                      onChange={handleLtcSwitchChange}
                       name="customSwitch"
                       sx={{
                         "& .MuiSwitch-thumb": {
                           bgcolor: "#FFFFFF",
                         },
                         "& .MuiSwitch-track": {
-                          background: checked
+                          background: ltcchecked
                             ? "linear-gradient(to right,#790D83,#7A5CFF)"
                             : "#9E9E9E",
                         },
@@ -2295,8 +2303,8 @@ const BotsTable = () => {
                 </Box>
               </CardContent>
             </Card>
-          </Box>
-        </Box>
+          </Grid>
+        </Grid>
       </Container>
     </>
   );
