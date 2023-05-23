@@ -49,10 +49,10 @@ const AllDeals = () => {
                   justifyContent: "flex-start",
                   height: "150px",
                   alignItems: "center",
-                  boxShadow: "1px 1px 2px 1px rgba(0, 0, 0, 0.2)",
                   borderRadius: "5px",
-                  background:
-                    "linear-gradient( #3E124B, rgba(41, 8, 77, 0.5) )",
+                  // background:
+                  //   "linear-gradient( #3E124B, rgba(41, 8, 77, 0.5) )",
+                  background: "#790d832d",
                 }}
               >
                 <Box
