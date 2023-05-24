@@ -1524,8 +1524,8 @@ const BotsTable = () => {
                 >
                   <Button
                     sx={{
-                      border: "1px solid #40343F",
-                      background: "linear-gradient(to left,#32222D,#342933)",
+                      border: "1px solid #4E343F",
+                      background: "linear-gradient(to left,#422240,#47294B)",
                       borderTopRightRadius: 0,
                       borderBottomRightRadius: 0,
                       borderTopLeftRadius: 10,
@@ -1539,8 +1539,8 @@ const BotsTable = () => {
                   </Button>
                   <Button
                     sx={{
-                      border: "1px solid #40343F",
-                      background: "linear-gradient(to left,#32222D,#342933)",
+                      border: "1px solid #4E343F",
+                      background: "linear-gradient(to left,#422240,#47294B)",
                       borderTopRightRadius: 0,
                       borderBottomRightRadius: 0,
                       borderTopLeftRadius: 0,
@@ -1554,8 +1554,8 @@ const BotsTable = () => {
                   </Button>
                   <Button
                     sx={{
-                      border: "1px solid #40343F",
-                      background: "linear-gradient(to left,#32222D,#342933)",
+                      border: "1px solid #4E343F",
+                      background: "linear-gradient(to left,#422240,#47294B)",
                       borderTopRightRadius: 10,
                       borderBottomRightRadius: 10,
                       borderTopLeftRadius: 0,
@@ -1881,8 +1881,8 @@ const BotsTable = () => {
                 >
                   <Button
                     sx={{
-                      border: "1px solid #40343F",
-                      background: "linear-gradient(to left,#32222D,#342933)",
+                      border: "1px solid #4E343F",
+                      background: "linear-gradient(to left,#422240,#47294B)",
                       borderTopRightRadius: 0,
                       borderBottomRightRadius: 0,
                       borderTopLeftRadius: 10,
@@ -1896,8 +1896,8 @@ const BotsTable = () => {
                   </Button>
                   <Button
                     sx={{
-                      border: "1px solid #40343F",
-                      background: "linear-gradient(to left,#32222D,#342933)",
+                      border: "1px solid #4E343F",
+                      background: "linear-gradient(to left,#422240,#47294B)",
                       borderTopRightRadius: 0,
                       borderBottomRightRadius: 0,
                       borderTopLeftRadius: 0,
@@ -1911,8 +1911,8 @@ const BotsTable = () => {
                   </Button>
                   <Button
                     sx={{
-                      border: "1px solid #40343F",
-                      background: "linear-gradient(to left,#32222D,#342933)",
+                      border: "1px solid #4E343F",
+                      background: "linear-gradient(to left,#422240,#47294B)",
                       borderTopRightRadius: 10,
                       borderBottomRightRadius: 10,
                       borderTopLeftRadius: 0,
@@ -2238,8 +2238,8 @@ const BotsTable = () => {
                 >
                   <Button
                     sx={{
-                      border: "1px solid #40343F",
-                      background: "linear-gradient(to left,#32222D,#342933)",
+                      border: "1px solid #4E343F",
+                      background: "linear-gradient(to left,#422240,#47294B)",
                       borderTopRightRadius: 0,
                       borderBottomRightRadius: 0,
                       borderTopLeftRadius: 10,
@@ -2253,8 +2253,8 @@ const BotsTable = () => {
                   </Button>
                   <Button
                     sx={{
-                      border: "1px solid #40343F",
-                      background: "linear-gradient(to left,#32222D,#342933)",
+                      border: "1px solid #4E343F",
+                      background: "linear-gradient(to left,#422240,#47294B)",
                       borderTopRightRadius: 0,
                       borderBottomRightRadius: 0,
                       borderTopLeftRadius: 0,
@@ -2268,8 +2268,8 @@ const BotsTable = () => {
                   </Button>
                   <Button
                     sx={{
-                      border: "1px solid #40343F",
-                      background: "linear-gradient(to left,#32222D,#342933)",
+                      border: "1px solid #4E343F",
+                      background: "linear-gradient(to left,#422240,#47294B)",
                       borderTopRightRadius: 10,
                       borderBottomRightRadius: 10,
                       borderTopLeftRadius: 0,
