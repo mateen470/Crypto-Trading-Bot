@@ -138,7 +138,8 @@ const DealTable = () => {
             sx={{
               mt: 3,
               // background: "linear-gradient(#44224E, #3B253C)",
-              background: "#790d832d",
+              // background: "#790d832d",
+              background: "#44224F",
             }}
           >
             <Box pt={2} pl={2}>
