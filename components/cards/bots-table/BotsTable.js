@@ -1241,7 +1241,8 @@ const BotsTable = () => {
             <Card
               sx={{
                 minWidth: 250,
-                background: "linear-gradient(#3D273F,#2C252C)",
+                // background: "linear-gradient(#3D273F,#2C252C)",
+                background: "#412645",
                 borderRadius: "8px",
                 minHeight: 360,
               }}
@@ -1373,7 +1374,7 @@ const BotsTable = () => {
                   <Grid item xs={6}>
                     <Box
                       sx={{
-                        background: "#3F2B3F",
+                        background: "#482950",
                         borderRadius: 3,
                         boxShadow: "1px 2px 1px 1px rgba(0, 0, 0, 0.268)",
                         minWidth: 125,
@@ -1456,7 +1457,7 @@ const BotsTable = () => {
                   <Grid item xs={6}>
                     <Box
                       sx={{
-                        background: "#3F2B3F",
+                        background: "#482950",
                         borderRadius: 3,
                         boxShadow: "1px 2px 1px 1px rgba(0, 0, 0, 0.268)",
                         minWidth: 125,
@@ -1475,7 +1476,7 @@ const BotsTable = () => {
                   <Grid item xs={6}>
                     <Box
                       sx={{
-                        background: "#3F2B3F",
+                        background: "#482950",
                         borderRadius: 3,
                         boxShadow: "1px 2px 1px 1px rgba(0, 0, 0, 0.268)",
                         minWidth: 125,
@@ -1494,7 +1495,7 @@ const BotsTable = () => {
                   <Grid item xs={6}>
                     <Box
                       sx={{
-                        background: "#3F2B3F",
+                        background: "#482950",
                         borderRadius: 3,
                         boxShadow: "1px 2px 1px 1px rgba(0, 0, 0, 0.268)",
                         minWidth: 125,
@@ -1597,7 +1598,8 @@ const BotsTable = () => {
             <Card
               sx={{
                 minWidth: 250,
-                background: "linear-gradient(#3D273F,#2C252C)",
+                // background: "linear-gradient(#3D273F,#2C252C)",
+                background: "#412645",
                 borderRadius: "8px",
                 minHeight: 360,
               }}
@@ -1729,7 +1731,7 @@ const BotsTable = () => {
                   <Grid item xs={6}>
                     <Box
                       sx={{
-                        background: "#3F2B3F",
+                        background: "#482950",
                         borderRadius: 3,
                         boxShadow: "1px 2px 1px 1px rgba(0, 0, 0, 0.268)",
                         minWidth: 125,
@@ -1812,7 +1814,7 @@ const BotsTable = () => {
                   <Grid item xs={6}>
                     <Box
                       sx={{
-                        background: "#3F2B3F",
+                        background: "#482950",
                         borderRadius: 3,
                         boxShadow: "1px 2px 1px 1px rgba(0, 0, 0, 0.268)",
                         minWidth: 125,
@@ -1831,7 +1833,7 @@ const BotsTable = () => {
                   <Grid item xs={6}>
                     <Box
                       sx={{
-                        background: "#3F2B3F",
+                        background: "#482950",
                         borderRadius: 3,
                         boxShadow: "1px 2px 1px 1px rgba(0, 0, 0, 0.268)",
                         minWidth: 125,
@@ -1850,7 +1852,7 @@ const BotsTable = () => {
                   <Grid item xs={6}>
                     <Box
                       sx={{
-                        background: "#3F2B3F",
+                        background: "#482950",
                         borderRadius: 3,
                         boxShadow: "1px 2px 1px 1px rgba(0, 0, 0, 0.268)",
                         minWidth: 125,
@@ -1952,7 +1954,8 @@ const BotsTable = () => {
             <Card
               sx={{
                 minWidth: 250,
-                background: "linear-gradient(#3D273F,#2C252C)",
+                // background: "linear-gradient(#3D273F,#2C252C)",
+                background: "#412645",
                 borderRadius: "8px",
                 minHeight: 360,
               }}
@@ -2085,7 +2088,7 @@ const BotsTable = () => {
                   <Grid item xs={6}>
                     <Box
                       sx={{
-                        background: "#3F2B3F",
+                        background: "#482950",
                         borderRadius: 3,
                         boxShadow: "1px 2px 1px 1px rgba(0, 0, 0, 0.268)",
                         minWidth: 125,
@@ -2168,7 +2171,7 @@ const BotsTable = () => {
                   <Grid item xs={6}>
                     <Box
                       sx={{
-                        background: "#3F2B3F",
+                        background: "#482950",
                         borderRadius: 3,
                         boxShadow: "1px 2px 1px 1px rgba(0, 0, 0, 0.268)",
                         minWidth: 125,
@@ -2187,7 +2190,7 @@ const BotsTable = () => {
                   <Grid item xs={6}>
                     <Box
                       sx={{
-                        background: "#3F2B3F",
+                        background: "#482950",
                         borderRadius: 3,
                         boxShadow: "1px 2px 1px 1px rgba(0, 0, 0, 0.268)",
                         minWidth: 125,
@@ -2206,7 +2209,7 @@ const BotsTable = () => {
                   <Grid item xs={6}>
                     <Box
                       sx={{
-                        background: "#3F2B3F",
+                        background: "#482950",
                         borderRadius: 3,
                         boxShadow: "1px 2px 1px 1px rgba(0, 0, 0, 0.268)",
                         minWidth: 125,

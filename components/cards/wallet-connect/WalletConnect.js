@@ -75,7 +75,7 @@ const WalletConnect = () => {
     if (data.body.exchanges[0]) {
       setAllExchange(data.body.exchanges);
       setSelectedExchange(data.body.exchanges[0].exchangeName);
-      console.log("Exchange: ",data.body.exchanges[0].exchangeName)
+      console.log("Exchange: ", data.body.exchanges[0].exchangeName);
       const { USDMClient } = require("binance");
       const baseUrl = "https://testnet.binancefuture.com";
       const client = new USDMClient({
@@ -117,7 +117,7 @@ const WalletConnect = () => {
     // console.log(session.user);
     var ccxt = require("ccxt");
     const { USDMClient } = require("binance");
-    console.log("Exchangee",data)
+    console.log("Exchangee", data);
     const API_KEY = data.get("apiKey");
     const API_SECRET = data.get("apiSecret");
     const baseUrl = "https://testnet.binancefuture.com";
@@ -176,42 +176,36 @@ const WalletConnect = () => {
 
     var ccxt = require("ccxt");
     const { USDMClient } = require("binance");
-    const { MainClient } = require('binance');
+    const { MainClient } = require("binance");
 
     const API_KEY = event.target.value.apiKey;
     const API_SECRET = event.target.value.apiSecret;
-    console.log("yo",event.target.value.exchangeName)
+    console.log("yo", event.target.value.exchangeName);
     let client = new USDMClient();
-    if (event.target.value.exchangeName === "Binance Futures Testnet")
-    {
-      console.log ("Truth Nothing")
-    const baseUrl = "https://testnet.binancefuture.com";
-    client = new USDMClient({
-      api_key: API_KEY,
-      api_secret: API_SECRET,
-      baseUrl,
-    });
-    }
-    else if (event.target.value.exchangeName === "Binance Futures")
-    {
-      console.log ("Truth Futures")
+    if (event.target.value.exchangeName === "Binance Futures Testnet") {
+      console.log("Truth Nothing");
+      const baseUrl = "https://testnet.binancefuture.com";
       client = new USDMClient({
         api_key: API_KEY,
         api_secret: API_SECRET,
         baseUrl,
       });
-    }
-    else if (event.target.value.exchangeName === "Binance Spot"){
-      console.log ("Truth Spot")
+    } else if (event.target.value.exchangeName === "Binance Futures") {
+      console.log("Truth Futures");
+      client = new USDMClient({
+        api_key: API_KEY,
+        api_secret: API_SECRET,
+        baseUrl,
+      });
+    } else if (event.target.value.exchangeName === "Binance Spot") {
+      console.log("Truth Spot");
       const client = new MainClient({
         api_key: API_KEY,
         api_secret: API_SECRET,
       });
-    }
-    else {
-      
-      alert ("Invalid Exchange, Try again")
-      return
+    } else {
+      alert("Invalid Exchange, Try again");
+      return;
     }
 
     client
@@ -322,95 +316,87 @@ const WalletConnect = () => {
         </Box>
       </Drawer>
 
-      {
-        loading ? (
-          <div style={{ display: "flex", justifyContent: "center" }}>
-            <CircularProgress />
-          </div>
-        ) : connected ? (
-          <Box>
-            <Typography sx={{ marginBottom: 2 }}>Wallet</Typography>
-            <Select
-              onChange={handleExchangeOnChange}
-              input={<OutlinedInput />}
-              MenuProps={{
-                PaperProps: {
-                  sx: {
-                    backgroundColor: "#452951",
-                    mt: 0.5,
-                    "& .MuiMenuItem-root": {
-                      color: "white",
-                      "&:hover": {
-                        backgroundColor: "#4E2C60",
-                      },
+      {loading ? (
+        <div style={{ display: "flex", justifyContent: "center" }}>
+          <CircularProgress />
+        </div>
+      ) : connected ? (
+        <Box>
+          <Typography sx={{ marginBottom: 2 }}>Wallet</Typography>
+          <Select
+            onChange={handleExchangeOnChange}
+            input={<OutlinedInput />}
+            MenuProps={{
+              PaperProps: {
+                sx: {
+                  backgroundColor: "#452951",
+                  mt: 0.5,
+                  "& .MuiMenuItem-root": {
+                    color: "white",
+                    "&:hover": {
+                      backgroundColor: "#4E2C60",
                     },
-                    "& .Mui-selected": {
-                      opacity: 0.4,
-                      backgroundColor: "transparent",
-                    },
-                    "& .MuiList-root": {
-                      paddingTop: 0,
-                      paddingBottom: 0,
-                    },
-                    "& .MuiMenu-paper": {
-                      marginTop: "8px",
-                    },
-                    "& .MuiListItem-root": {
-                      paddingTop: "10px",
-                      paddingBottom: "10px",
-                      "&:hover": {
-                        backgroundColor: "none",
-                      },
+                  },
+                  "& .Mui-selected": {
+                    opacity: 0.4,
+                    backgroundColor: "transparent",
+                  },
+                  "& .MuiList-root": {
+                    paddingTop: 0,
+                    paddingBottom: 0,
+                  },
+                  "& .MuiMenu-paper": {
+                    marginTop: "8px",
+                  },
+                  "& .MuiListItem-root": {
+                    paddingTop: "10px",
+                    paddingBottom: "10px",
+                    "&:hover": {
+                      backgroundColor: "none",
                     },
                   },
                 },
-              }}
-              sx={{
-                "& .MuiSelect-select .notranslate::after": `${selectedExchange}`
-                  ? {
-                      content: `"${selectedExchange}"`,
-                      opacity: 0.42,
-                    }
-                  : {},
-                minWidth: "100%",
-                height: 37,
-                borderRadius: "8px",
-                color: "white",
-                backgroundColor: "#452951",
-                boxShadow: "none",
-                ".MuiOutlinedInput-notchedOutline": {
-                  border: 0,
-                },
-              }}
-            >
-              {allExchange.map((item) => (
-                <MenuItem key={item._id} value={item}>
-                  {item.exchangeName}
-                </MenuItem>
-              ))}
-            </Select>
-            <Box>
-              <ul>
-                {connectionData.map((connectionData) => (
-                  <li key={connectionData.asset}>
-                    {connectionData.asset}: {connectionData.balance}
-                  </li>
-                ))}
-              </ul>
-            </Box>
-          </Box>
-        ) : (
+              },
+            }}
+            sx={{
+              "& .MuiSelect-select .notranslate::after": `${selectedExchange}`
+                ? {
+                    content: `"${selectedExchange}"`,
+                    opacity: 0.42,
+                  }
+                : {},
+              minWidth: "100%",
+              height: 37,
+              borderRadius: "8px",
+              color: "white",
+              backgroundColor: "#452951",
+              boxShadow: "none",
+              ".MuiOutlinedInput-notchedOutline": {
+                border: 0,
+              },
+            }}
+          >
+            {allExchange.map((item) => (
+              <MenuItem key={item._id} value={item}>
+                {item.exchangeName}
+              </MenuItem>
+            ))}
+          </Select>
           <Box>
-            <Typography sx={{ marginBottom: 2 }}>
-              No Wallet Connected
-            </Typography>
+            <ul>
+              {connectionData.map((connectionData) => (
+                <li key={connectionData.asset}>
+                  {connectionData.asset}: {connectionData.balance}
+                </li>
+              ))}
+            </ul>
           </Box>
-        )
-
-        
-      }
-
-      
+        </Box>
+      ) : (
+        <Box>
+          <Typography sx={{ marginBottom: 2 }}>No Wallet Connected</Typography>
+        </Box>
+      )}
     </Container>
   );
 };

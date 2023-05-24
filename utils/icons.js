@@ -58,8 +58,10 @@ import DCAEthereum from "../assets/icons/dca-eth.svg";
 import DCALtc from "../assets/icons/dca-ltc.svg";
 import DCAStar from "../assets/icons/dca-star.svg";
 import DCADeal from "../assets/icons/dca-deal.svg";
+import Btc from "../assets/icons/btc.svg";
 
 export {
+  Btc,
   DCAProfit,
   DCABitcoin,
   DCAEthereum,

@@ -10,7 +10,7 @@ export default function LoginPage() {
         backgroundImage: "url(https://i.postimg.cc/CMf1H64S/bg.png)",
         backgroundPosition: "left",
         backgroundRepeat: "no-repeat",
-        backgroundSize:'auto 100%',
+        backgroundSize: "auto 100%",
         height: "100vh",
       }}
     >
@@ -28,6 +28,4 @@ export default function LoginPage() {
       </div>
     </div>
   );
-  
-  
 }
