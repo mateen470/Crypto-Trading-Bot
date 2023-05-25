@@ -23,6 +23,7 @@ import {
   DCABotsIcon,
   MyExchangesIcon,
   TradingBotsIcon,
+  NavBarLogo,
 } from "../../utils/icons";
 
 // import { signOut } from "next-auth/client";
@@ -122,13 +123,19 @@ export default function Header() {
         open={open}
         sx={{
           color: "#795BFF",
-          background: "rgb(0,0,0,0)",
+          // background: "rgb(0,0,0,0)",
+          backgroundImage: "url(https://i.ibb.co/p3vmvzc/authBg.png)",
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center",
         }}
       >
-        <Toolbar sx={{
+        <Toolbar
+          sx={{
             display: "flex",
             justifyContent: "space-between",
-          }}>
+          }}
+        >
           {/* <Typography
             onClick={() => {
               router.push("/");
@@ -141,23 +148,24 @@ export default function Header() {
           >
             Trading Bot
           </Typography> */}
-          <img style={{
+          {/* <img style={{
             cursor: "pointer",
             flexWrap:'nowrap',
             
           }} 
-          src="https://i.postimg.cc/Fz5zMjxY/logove.png" width={40}></img>
+          src="https://i.postimg.cc/Fz5zMjxY/logove.png" width={40}></img> */}
+          <NavBarLogo />
           <Box>
             <Button
               onClick={() => {
                 router.push("login");
               }}
-              sx={{ color: "#FFFFFF" }}
+              sx={{ color: "#FFFFFF", fontWeight: 800 }}
             >
               Login
             </Button>
             <Button
-              sx={{ color: "#FFFFFF" }}
+              sx={{ color: "#FFFFFF", fontWeight: 800 }}
               onClick={() => {
                 router.push("register");
               }}

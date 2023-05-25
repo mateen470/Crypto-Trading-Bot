@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -11,13 +11,14 @@ import Box from "@mui/material/Box";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
-import Copyright from "../Copyright";
+
 import { Alert } from "@mui/material";
 import { useRouter } from "next/router";
 import { signIn, getSession } from "next-auth/react";
 import { useSelector, useDispatch } from "react-redux";
 import { setExchange } from "../../slices/exchange-slice";
 import { setAssets } from "../../slices/asset-slice";
+import { Google } from "../../utils/icons";
 
 const ccxt = require("ccxt");
 
@@ -26,27 +27,32 @@ const ValidationTextField = styled(InputBase)(({ theme }) => ({
     marginTop: theme.spacing(3),
   },
   "& .MuiInputBase-input": {
-    // borderRadius: 4,
     position: "relative",
-    // backgroundColor: "#292929",
-    borderBottom: "1px solid #ced4da",
-    fontSize: 16,
-    color: "#CCCCCC",
-    padding: "20px 12px",
+    marginTop: "2rem",
+    padding: "10px 5px",
+    backgroundColor: "transparent",
+    border: "none",
+    borderBottom: "1px solid #fff",
+    fontSize: 18,
+    color: "#fff",
     transition: theme.transitions.create([
       "border-color",
       "background-color",
       "box-shadow",
     ]),
     "&:focus": {
-      boxShadow: `${alpha(theme.palette.primary.main, 0.25)} 0 0 0 0.2rem`,
-      borderColor: theme.palette.primary.main,
+      // boxShadow: `${alpha(theme.palette.primary.main, 0.25)} 0 0 0 0.2rem`,
+      // borderColor: theme.palette.primary.main,
+      boxShadow: "none",
+      borderColor: "none",
     },
   },
 }));
 
 const Login = () => {
   const [error, setError] = useState("");
+  const [width, setWidth] = useState(globalThis?.innerWidth);
+
   const router = useRouter();
   const exchanges = useSelector((state) => state.exchanges.value);
   const dispatch = useDispatch();
@@ -133,54 +139,75 @@ const Login = () => {
       }
     }
   };
-
+  useEffect(() => {
+    const handleResize = () => setWidth(globalThis?.innerWidth);
+    globalThis?.addEventListener("resize", handleResize);
+    return () => globalThis?.removeEventListener("resize", handleResize);
+  }, []);
   return (
     <>
       <Container
         sx={{
-          marginTop: "-5%",
-          background: "rgba(255, 255, 255, 0.09)",
-          borderRadius: 10,
-          p: 1,
-          // marginLeft:'60%',
-          border: "0px solid #666666",
-          backdropFilter: "blur(10px)",
-          WebkitBackdropFilter: "blur(10px)", // For Safari compatibility
-          boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)", // Optional: add a subtle shadow for depth
+          marginTop: width > 1600 ? "0%" : "-10%",
+          minHeight: "90vh",
         }}
         component="main"
-        maxWidth="xs"
+        // maxWidth="xs"
       >
         <CssBaseline />
         <Box
           sx={{
-            marginTop: 8,
             display: "flex",
-            flexDirection: "column",
             alignItems: "center",
+            flexDirection: "column",
           }}
         >
-          <Typography
-            sx={{ mt: 1, fontSize: "2.5rem" }}
-            color="white"
-            fontWeight={800}
-            fontFamily="poppins"
-            component="h1"
-            variant="h5"
+          <Box
+            sx={{
+              marginTop: 8,
+              width: "50vw",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+              backgroundImage: "url(https://i.ibb.co/p3vmvzc/authBg.png)",
+              backgroundSize: "cover",
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "center",
+              borderRadius: 10,
+              px: 11,
+              py: 8,
+              border: "0px solid #666666",
+              backdropFilter: "blur(5px)",
+              WebkitBackdropFilter: "blur(10px)",
+              boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+            }}
           >
-            Welcome Back
-          </Typography>
-          {/* Log in to access your account */}
-          <Typography
-            sx={{ mt: 1 }}
-            color="#cecece"
-            variant="h6"
-            fontSize="1rem"
-          >
-            Log in to access your account
-          </Typography>
-          <Box component="form" onSubmit={handleSubmit} sx={{ mt: 1 }}>
-            {/* <Typography
+            <Typography
+              sx={{
+                mt: 1,
+                fontSize: "50px",
+                color: "white",
+                fontWeight: "800",
+                lineHeight: 1,
+                whiteSpace: "nowrap",
+              }}
+              color="primary"
+              component="h1"
+            >
+              Welcome Back
+            </Typography>
+            {/* Log in to access your account */}
+            <Typography
+              sx={{ mt: 1 }}
+              color="#cecece"
+              variant="h6"
+              fontSize="1rem"
+            >
+              Log in to access your account
+            </Typography>
+            <Box component="form" onSubmit={handleSubmit} sx={{ mt: 1 }}>
+              {/* <Typography
               sx={{ marginBottom: 1, mt: 2 }}
               color="#cecece"
               variant="h6"
@@ -188,19 +215,19 @@ const Login = () => {
             >
               Email Address:
             </Typography> */}
-            <ValidationTextField
-              focused
-              margin="normal"
-              required
-              fullWidth
-              id="email"
-              label="Email Address"
-              placeholder="Email Address / Username"
-              name="email"
-              autoComplete="email"
-              autoFocus
-            />
-            {/* <Typography
+              <ValidationTextField
+                focused
+                margin="normal"
+                required
+                fullWidth
+                id="email"
+                label="Email Address"
+                placeholder="Email Address / Username"
+                name="email"
+                autoComplete="email"
+                autoFocus
+              />
+              {/* <Typography
               sx={{ marginBottom: 1, mt: 2 }}
               color="#cecece"
               variant="h6"
@@ -208,60 +235,90 @@ const Login = () => {
             >
               Password:
             </Typography> */}
-            <ValidationTextField
-              focused
-              margin="normal"
-              required
-              fullWidth
-              name="password"
-              label="Password"
-              type="password"
-              placeholder="Password"
-              id="password"
-              autoComplete="current-password"
-            />
+              <ValidationTextField
+                focused
+                margin="normal"
+                required
+                fullWidth
+                name="password"
+                label="Password"
+                type="password"
+                placeholder="Password"
+                id="password"
+                autoComplete="current-password"
+              />
+              <Box
+                sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <Button
+                  type="submit"
+                  variant="contained"
+                  sx={{
+                    mt: 3,
+                    mb: 2,
+                    textTransform: "none",
+                    background:
+                      "linear-gradient(90deg, #790D83 0%, #7A5CFF 100%)",
+                    color: "white",
+                    fontWeight: "600",
+                    "&:hover": {
+                      background:
+                        "linear-gradient(90deg, #790D83 0%, #7A5CFF 100%)",
+                      opacity: 0.9,
+                    },
+                    width: "8rem",
+                  }}
+                >
+                  Login
+                </Button>
+              </Box>
 
-            <Button
-              type="submit"
-              variant="contained"
-              sx={{
-                mt: 3,
-                mb: 2,
-                ml: 16,
-                background: "linear-gradient(90deg, #790D83 0%, #7A5CFF 100%)",
-                color: "white",
-                fontWeight: "600",
-                "&:hover": {
-                  background:
-                    "linear-gradient(90deg, #790D83 0%, #7A5CFF 100%)",
-                  opacity: 0.9,
-                },
-                width: "8rem",
-              }}
-            >
-              Sign In
-            </Button>
-            {error && (
-              <Alert sx={{ mb: 1 }} severity="error">
-                {error}
-              </Alert>
-            )}
-
-            <Grid container>
-              <Grid item xs>
-                {/* <Link href="#" color="#795BFF" variant="body2">
+              {error && (
+                <Alert sx={{ mb: 1 }} severity="error">
+                  {error}
+                </Alert>
+              )}
+              <Box
+                item
+                sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  flexDirection: "column",
+                  gap: 1,
+                  mt: 3,
+                }}
+              >
+                <Typography fontWeight={600}>Or Login with</Typography>
+                <Google />
+              </Box>
+              <Grid container>
+                <Grid item xs>
+                  {/* <Link href="#" color="#795BFF" variant="body2">
                   Forgot password?
                 </Link> */}
+                </Grid>
               </Grid>
-              <Grid item>
-                <Link href="register" color="#795BFF" variant="body2">
-                  {"Don't have an account? Sign Up"}
-                </Link>
-              </Grid>
-            </Grid>
+            </Box>
           </Box>
+          <Link
+            href="register"
+            color="#FFFFFF"
+            variant="body2"
+            style={{
+              display: "flex",
+              alignItems: "center",
+              marginTop: "1rem",
+            }}
+          >
+            Don't have an account?{" "}
+            <Typography sx={{ fontWeight: 800 }}> Sign Up</Typography>
+          </Link>
         </Box>
-        <Copyright sx={{ mt: 8, mb: 4 }} />
       </Container>
     </>
   );

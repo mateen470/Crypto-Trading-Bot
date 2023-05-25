@@ -32,7 +32,7 @@ const ValidationTextField = styled(InputBase)(({ theme }) => ({
     backgroundColor: "transparent",
     border: "none",
     borderBottom: "1px solid #fff",
-    fontSize: 16,
+    fontSize: 18,
     color: "#fff",
     transition: theme.transitions.create([
       "border-color",
@@ -101,7 +101,7 @@ const Register = () => {
       <Container
         sx={{
           display: "flex",
-          justifyContent: "space-between",
+          justifyContent: "center",
           alignItems: "center",
           minHeight: "90vh",
         }}
@@ -111,28 +111,71 @@ const Register = () => {
         <CssBaseline />
         <Box
           sx={{
-            // marginTop: 8,
             display: "flex",
             flexDirection: "column",
-            width: "45%",
-            // alignItems: "center",
+            width: "65vw",
+            alignItems: "center",
+            marginTop: "-5%",
+            borderRadius: 10,
+            px: 10,
+            py: 5,
+            backgroundImage: "url(https://i.ibb.co/p3vmvzc/authBg.png)",
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "center",
+            border: "0px solid #666666",
+            backdropFilter: "blur(5px)",
+            WebkitBackdropFilter: "blur(10px)",
+            boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
           }}
         >
           {/* <Avatar>
             <LockOutlinedIcon color="primary" />
           </Avatar>     */}
-          <Typography
-            sx={{ mt: 1, fontSize: "50px", color: "white", fontWeight: "800" }}
-            color="primary"
-            component="h1"
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
           >
-            Start Signup for free
-          </Typography>
-          <Typography
-            sx={{ fontSize: "20px", color: "white", fontWeight: "400" }}
-          >
-            Create your free account
-          </Typography>
+            <Typography
+              sx={{
+                mt: 1,
+                fontSize: "50px",
+                color: "white",
+                fontWeight: "800",
+                lineHeight: 1,
+              }}
+              color="primary"
+              component="h1"
+            >
+              Start Signup
+            </Typography>
+            <Typography
+              sx={{
+                mt: 1,
+                fontSize: "50px",
+                color: "white",
+                fontWeight: "800",
+                lineHeight: 1,
+              }}
+              color="primary"
+              component="h1"
+            >
+              for free
+            </Typography>
+            <Typography
+              sx={{
+                fontSize: "20px",
+                color: "#CCC2CF",
+                fontWeight: "400",
+                lineHeight: 4,
+              }}
+            >
+              Create your free account
+            </Typography>
+          </Box>
           <Box component="form" onSubmit={handleSubmit} sx={{ mt: 3 }}>
             <Grid container spacing={2}>
               {/* <Grid item xs={12} sm={12}>
@@ -167,7 +210,6 @@ const Register = () => {
                   placeholder="First Name"
                   // id="companyName"
                   // placeholder="Company Name"
-                  // pla="companyName"
                   // autoComplete="family-name"
                 />
               </Grid>
@@ -255,23 +297,26 @@ const Register = () => {
                 </Box>
               </Grid>
             </Grid>
-            <Box>
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
               <LoadingButton
                 type="submit"
+                variant="contained"
                 loading={loading}
                 sx={{
                   mb: 5,
                   height: "40px",
                   width: "180px",
+                  textTransform: "none",
                   background:
                     "linear-gradient(90deg, #790D83 0%, #7A5CFF 100%)",
                   color: "white",
                   fontWeight: "600",
-                  borderRadius: "5px",
-                  cursor: "pointer",
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
                   "&:hover": {
                     background:
                       "linear-gradient(90deg, #790D83 0%, #7A5CFF 100%)",
@@ -289,14 +334,24 @@ const Register = () => {
             )}
             <Grid container justifyContent="center">
               <Grid item>
-                <Link color="#795BFF" href="login" variant="body2">
-                  Already have an account? Sign in
+                <Link
+                  href="login"
+                  color="#FFFFFF"
+                  variant="body2"
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    marginTop: "1rem",
+                  }}
+                >
+                  Already have an account?{" "}
+                  <Typography sx={{ fontWeight: 800 }}> Sign in</Typography>
                 </Link>
               </Grid>
             </Grid>
           </Box>
         </Box>
-        <Box
+        {/* <Box
           style={{
             position: "absolute",
             top: "0",
@@ -318,7 +373,7 @@ const Register = () => {
             width={500}
             height={800}
           />
-        </Box>
+        </Box> */}
       </Container>
 
       <Copyright sx={{ mt: 8, pb: 3 }} />

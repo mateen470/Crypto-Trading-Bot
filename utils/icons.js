@@ -60,8 +60,14 @@ import DCAStar from "../assets/icons/dca-star.svg";
 import DCADeal from "../assets/icons/dca-deal.svg";
 import Btc from "../assets/icons/btc.svg";
 import TotalTime from "../assets/icons/total-time.svg";
+import Google from "../assets/icons/google.svg";
+import Auth from "../assets/icons/Auth.svg";
+import NavBarLogo from "../assets/icons/navBarLogo.svg";
 
 export {
+  NavBarLogo,
+  Auth,
+  Google,
   TotalTime,
   Btc,
   DCAProfit,

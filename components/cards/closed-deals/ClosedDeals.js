@@ -8,9 +8,9 @@ import { YellowHandShakeBig } from "../../../utils/icons";
 import { getSession } from "next-auth/react";
 
 const ClosedDeals = () => {
-  const [width, setWidth] = useState(globalThis?.innerWidth);
   const [closedDeals, setClosedDeals] = useState(0);
   const [activeDeals, setActiveDeals] = useState(0);
+  const [width, setWidth] = useState(globalThis?.innerWidth);
 
   useEffect(() => {
     const handleResize = () => setWidth(globalThis?.innerWidth);
