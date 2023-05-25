@@ -10,6 +10,7 @@ import {
   MaxDropIcon,
   TotalProfitBarIcon,
   TradingBotsIcon,
+  TotalTime,
 } from "../utils/icons";
 import SummaryProfit from "../components/charts/SummaryProfit";
 import ProfitByDay from "../components/charts/ProfitByDay";
@@ -49,7 +50,7 @@ const profitCards = [
   },
   {
     title: "Total Time",
-    icon: <AverageTimeSignalIcon />,
+    icon: <TotalTime />,
     data: "0 Hour",
   },
 ];

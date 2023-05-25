@@ -59,8 +59,10 @@ import DCALtc from "../assets/icons/dca-ltc.svg";
 import DCAStar from "../assets/icons/dca-star.svg";
 import DCADeal from "../assets/icons/dca-deal.svg";
 import Btc from "../assets/icons/btc.svg";
+import TotalTime from "../assets/icons/total-time.svg";
 
 export {
+  TotalTime,
   Btc,
   DCAProfit,
   DCABitcoin,

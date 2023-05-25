@@ -30,45 +30,45 @@ class CandlestickChart extends React.Component {
         },
         zoom: {
           enabled: true,
-          autoScaleYaxis: true
+          autoScaleYaxis: true,
         },
         pan: {
           enabled: true,
-          handleDblClick: 'reset'
+          handleDblClick: "reset",
         },
         annotations: {
-          position: 'back',
+          position: "back",
           points: [
             {
               x: new Date("2022-01-02").getTime(),
               y: 13.0,
               marker: {
-                size: 0
+                size: 0,
               },
               label: {
-                borderColor: '#00E396',
-                offsetY: -20,
                 style: {
-                  color: '#fff',
-                  background: '#00E396',
+                  color: "#fff",
+                  background: "#00E396",
                 },
-                text: 'Buy',
+                borderColor: "#00E396",
+                offsetY: -20,
+                text: "Buy",
               },
             },
             {
               x: new Date("2022-01-11").getTime(),
               y: 17.0,
               marker: {
-                size: 0
+                size: 0,
               },
               label: {
-                borderColor: '#FEB019',
+                borderColor: "#FEB019",
                 offsetY: -20,
                 style: {
-                  color: '#fff',
-                  background: '#FEB019',
+                  color: "#fff",
+                  background: "#FEB019",
                 },
-                text: 'Sell',
+                text: "Sell",
               },
             },
           ],
@@ -133,12 +133,7 @@ class CandlestickChart extends React.Component {
         document.msExitFullscreen();
       }
     }
-  }
-
-
-
-
-
+  };
 
   render() {
     return (

@@ -20,7 +20,6 @@ body {
   font-family: "Poppins", sans-serif;
   color: #ffffff;
   box-sizing: border-box;
-  /* color: #692e75aa */
 }
 body::-webkit-scrollbar {
   display: none;
