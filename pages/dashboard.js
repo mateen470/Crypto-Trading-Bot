@@ -246,7 +246,7 @@ const DashboardComponent = () => {
       </Grid>
 
       <Typography
-        sx={{ fontSize: 18, ml: 1, mt: 4, mb: 1, mr: 5, fontWeight: 700 }}
+        sx={{ fontSize: 18, ml: 1, mt: 4, mb: 1, mr: 5, fontWeight: 600 }}
         color="White"
       >
         Aggregate Account Balance

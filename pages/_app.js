@@ -7,6 +7,7 @@ import connectMongo from "../utils/connectMongo";
 import { SessionProvider } from "next-auth/react";
 import { store } from "../store";
 import { Provider } from "react-redux";
+import "typeface-poppins";
 
 function MyApp({ Component, pageProps }) {
   return (

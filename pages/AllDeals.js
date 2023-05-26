@@ -71,7 +71,7 @@ const AllDeals = () => {
                 <Box sx={{ p: 1, width: "fit-content" }}>
                   <Typography
                     sx={{
-                      fontWeight: "600",
+                      fontWeight: "500",
                       fontSize: "16px",
                       color: "white",
                     }}

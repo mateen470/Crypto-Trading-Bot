@@ -63,8 +63,12 @@ import TotalTime from "../assets/icons/total-time.svg";
 import Google from "../assets/icons/google.svg";
 import Auth from "../assets/icons/Auth.svg";
 import NavBarLogo from "../assets/icons/navBarLogo.svg";
+import Logo from "../assets/icons/Logo.svg";
+import ClosedMenuIcon from "../assets/icons/MenuIcon.svg";
 
 export {
+  ClosedMenuIcon,
+  Logo,
   NavBarLogo,
   Auth,
   Google,

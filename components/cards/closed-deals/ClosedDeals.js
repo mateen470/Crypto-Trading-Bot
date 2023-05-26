@@ -72,13 +72,15 @@ const ClosedDeals = () => {
             <YellowHandShakeBig />
           </div>
           <Stack spacing={1}>
-            <Typography color="#CCCCCC">Closed Deals</Typography>
+            <Typography color="#CCCCCC" fontWeight={500}>
+              Closed Deals
+            </Typography>
             <Typography fontSize="24px" fontWeight="600" color="#CCCCCC">
               {closedDeals}
             </Typography>
           </Stack>
         </Stack>
-        <Typography mt={3} color="#CCCCCC">
+        <Typography mt={3} color="#CCCCCC" fontWeight={500}>
           Active Deals: {activeDeals}
         </Typography>
       </CardContent>

@@ -1282,7 +1282,7 @@ const BotsTable = () => {
                         flexDirection: "column",
                       }}
                     >
-                      <Typography fontWeight={700}>
+                      <Typography fontWeight={600}>
                         BTC Short Bot Vector Candles
                       </Typography>
                       <Typography fontSize={"0.9rem"}>Binance</Typography>
@@ -1639,7 +1639,7 @@ const BotsTable = () => {
                         flexDirection: "column",
                       }}
                     >
-                      <Typography fontWeight={700}>
+                      <Typography fontWeight={600}>
                         ETH Short Bot Vector Candles
                       </Typography>
                       <Typography fontSize={"0.9rem"}>Binance</Typography>
@@ -1996,7 +1996,7 @@ const BotsTable = () => {
                         flexDirection: "column",
                       }}
                     >
-                      <Typography fontWeight={700}>
+                      <Typography fontWeight={600}>
                         LTC Short Bot Vector Candles
                       </Typography>
                       <Typography fontSize={"0.9rem"}>Binance</Typography>

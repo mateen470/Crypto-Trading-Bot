@@ -29,7 +29,7 @@ const Balances = () => {
           <TableRow>
             <TableCell
               sx={{
-                fontWeight: "600",
+                fontWeight: "500",
                 borderRight: "1px solid rgba(255, 255, 255, 0.3)",
               }}
             >
@@ -75,7 +75,7 @@ const Balances = () => {
                     color: "white",
                   }}
                 >
-                  History
+                  Refresh
                 </Typography>
               </Box>
             </TableCell>
@@ -88,7 +88,7 @@ const Balances = () => {
             ></TableCell>
             <TableCell
               sx={{
-                fontWeight: "600",
+                fontWeight: "500",
                 borderRight: "1px solid rgba(255, 255, 255, 0.3)",
               }}
             >
@@ -96,7 +96,7 @@ const Balances = () => {
             </TableCell>
             <TableCell
               sx={{
-                fontWeight: "600",
+                fontWeight: "500",
               }}
             >
               Available

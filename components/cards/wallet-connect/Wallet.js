@@ -53,7 +53,9 @@ const Wallet = () => {
               }}
             >
               <CardContent>
-                <Typography fontSize={"1.1rem"}>{data.coinName}</Typography>
+                <Typography fontSize={"1.1rem"} fontWeight={500}>
+                  {data.coinName}
+                </Typography>
                 <Typography color={"#9F90A2"} fontSize={"0.9rem"}>
                   Assets
                 </Typography>
@@ -100,10 +102,10 @@ const Wallet = () => {
                       gap: 1,
                     }}
                   >
-                    <Typography color={"#9F90A2"} fontWeight={600}>
+                    <Typography color={"#9F90A2"} fontWeight={500}>
                       {data.available}
                     </Typography>
-                    <Typography color={"#5D3FA6"} fontWeight={600}>
+                    <Typography color={"#5D3FA6"} fontWeight={500}>
                       USDT
                     </Typography>
                   </Box>
@@ -124,10 +126,10 @@ const Wallet = () => {
                       gap: 1,
                     }}
                   >
-                    <Typography color={"#9F90A2"} fontWeight={600}>
+                    <Typography color={"#9F90A2"} fontWeight={500}>
                       {data.lockedBalances}
                     </Typography>
-                    <Typography color={"#5D3FA6"} fontWeight={600}>
+                    <Typography color={"#5D3FA6"} fontWeight={500}>
                       USDT
                     </Typography>
                   </Box>

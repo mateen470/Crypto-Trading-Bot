@@ -36,7 +36,7 @@ const OverallStats = () => {
       >
         <Typography
           sx={{
-            fontWeight: "600",
+            fontWeight: "500",
             fontSize: "18px",
             color: "white",
           }}

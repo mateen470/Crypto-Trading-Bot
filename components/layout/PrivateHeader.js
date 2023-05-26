@@ -19,14 +19,16 @@ import { useDispatch } from "react-redux";
 import { setWidth } from "../../slices/dashboardWidthController-slice";
 import { useRouter } from "next/router";
 import {
+  Logo,
   Dash,
+  BlueDash,
+  ClosedMenuIcon,
   TradingBotsIcon,
   HandShake,
   VgridBot,
   VdcaBot,
   History,
   Lock,
-  BlueDash,
   BlueLock,
   BlueHandShake,
   BlueTradingBotsIcon,
@@ -111,7 +113,7 @@ export default function PrivateHeader({ title, current, Component }) {
       cursor: "pointer",
       "&::before": {
         content: '""',
-        backgroundColor: "white",
+        backgroundColor: "#CDC4F6",
         minHeight: 30,
         width: "5px",
         position: "absolute",
@@ -123,7 +125,7 @@ export default function PrivateHeader({ title, current, Component }) {
         opacity: 1,
       },
       "&:hover": {
-        backgroundColor: "#473956",
+        backgroundColor: !open ? "none" : "#473956",
         borderRadius: index === 2 && open ? "0px 5px 5px 0px" : "0px",
       },
     };
@@ -232,21 +234,22 @@ export default function PrivateHeader({ title, current, Component }) {
             VeBot
           </Typography> */}
           {!open ? (
-            <IconButton
-              onClick={handleDrawerOpen}
-              sx={{ left: selectedItem === 0 ? -7 : -3.5 }}
-            >
-              <img
-                style={{
-                  cursor: "pointer",
-                  flexWrap: "nowrap",
-                }}
-                src="https://i.postimg.cc/Fz5zMjxY/logove.png"
-                width={30}
-              ></img>
+            <IconButton onClick={handleDrawerOpen} sx={{ left: -7 }}>
+              <ClosedMenuIcon />
             </IconButton>
           ) : (
-            <img
+            <>
+              <Logo />
+              <IconButton onClick={handleDrawerClose}>
+                {theme.direction === "rtl" ? (
+                  <ChevronRightIcon sx={{ color: "#FFFFFF" }} />
+                ) : (
+                  <CloseIcon sx={{ color: "#FFFFFF" }} />
+                )}
+              </IconButton>
+            </>
+          )}
+          {/* <img
               style={{
                 cursor: "pointer",
                 // flexWrap:'nowrap',
@@ -254,10 +257,9 @@ export default function PrivateHeader({ title, current, Component }) {
               }}
               src="https://i.postimg.cc/wBfYXdvq/Group-1000009101-1.png"
               width={130}
-            ></img>
-          )}
+            ></img> */}
           {/* https://i.postimg.cc/HnrK4JN3/Group-1000009101.png */}
-          {!open ? (
+          {/* {!open ? (
             <IconButton
               onClick={handleDrawerOpen}
               sx={{ left: selectedItem === 0 ? -7 : -3.5 }}
@@ -276,7 +278,7 @@ export default function PrivateHeader({ title, current, Component }) {
                 <CloseIcon sx={{ color: "#FFFFFF" }} />
               )}
             </IconButton>
-          )}
+          )} */}
         </DrawerHeader>
         {/* <Box
           sx={{
@@ -286,7 +288,7 @@ export default function PrivateHeader({ title, current, Component }) {
         >
           <SearchBar />
         </Box> */}
-        <List sx={{ mb: "40vh" }}>
+        <List sx={{ mb: "40vh", mt: open ? 2 : 0 }}>
           {items.map((item) => (
             <div key={item.index}>
               {item.index === 0 && open && (
@@ -348,14 +350,9 @@ export default function PrivateHeader({ title, current, Component }) {
                 <ListItemIcon
                   sx={{
                     display: "flex",
-                    justifyContent: open ? "center" : "",
+                    justifyContent: open ? "center" : "center",
                     alignItems: "center",
-                    pr: 2,
-                    pl:
-                      (item.index === 1 && !open) || (item.index === 6 && !open)
-                        ? 0.3
-                        : "",
-                    ml: !open ? 0.5 : "",
+                    pr: !open ? 3 : "",
                   }}
                 >
                   <item.icon />
@@ -412,7 +409,7 @@ export default function PrivateHeader({ title, current, Component }) {
               cursor: "pointer",
               "&::before": {
                 content: '""',
-                backgroundColor: "white",
+                backgroundColor: "#CDC4F6",
                 minHeight: 30,
                 width: "5px",
                 position: "absolute",
@@ -436,7 +433,7 @@ export default function PrivateHeader({ title, current, Component }) {
           <ListItem
             sx={{
               display: `${open ? "flex" : "none"}`,
-              pl: selectedItem === 0 ? 2.5 : 1.5,
+              pl: 1.5,
               minHeight: 45,
               cursor: "pointer",
               "&::before": {

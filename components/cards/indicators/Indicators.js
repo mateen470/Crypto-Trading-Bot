@@ -162,7 +162,7 @@ const Indicators = (props) => {
           }}
         >
           <Typography
-            sx={{ mt: 1, fontWeight: 600 }}
+            sx={{ mt: 1, fontWeight: 500 }}
             color="white"
             component="h1"
             variant="h5"

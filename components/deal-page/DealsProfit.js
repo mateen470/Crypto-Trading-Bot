@@ -21,7 +21,7 @@ const DealsProfit = () => {
           sx={{
             display: "flex",
             justifyContent: "flex-start",
-            fontWeight: "600",
+            fontWeight: "500",
             fontSize: "18px",
             py: 0.5,
           }}

@@ -57,19 +57,19 @@ const GeneralSettings = (props) => {
   const name = ["Long", "Short"];
   const listOfPairs = ["BTC/USDT", "ETH/USDT", "DOGE/USDT", "SOL/USDT"];
   return (
-    <Container
+    <Box
       sx={{
-        background: "linear-gradient(to right,#3E2146,#371655)",
+        // background: "linear-gradient(to right,#3E2146,#371655)",
         mt: 5,
         borderRadius: "5px",
-        p: 3,
+        // p: 3,
         marginBottom: 5,
       }}
       maxWidth="100%"
     >
       <Box>
         <Typography
-          sx={{ mt: 1, fontWeight: 600 }}
+          sx={{ mt: 1, fontWeight: 500 }}
           color="white"
           component="h1"
           variant="h5"
@@ -273,7 +273,7 @@ const GeneralSettings = (props) => {
           </Grid>
         </Grid>
       </Box>
-    </Container>
+    </Box>
   );
 };
 

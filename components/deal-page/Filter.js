@@ -29,7 +29,7 @@ const Filter = () => {
       >
         <Typography
           sx={{
-            fontWeight: "600",
+            fontWeight: "500",
             fontSize: "18px",
             color: "#CCCCCC",
           }}
@@ -55,7 +55,7 @@ const Filter = () => {
           <Typography
             sx={{
               width: "auto",
-              fontWeight: "600",
+              fontWeight: "500",
               fontSize: "15px",
               color: "white",
               display: "flex",

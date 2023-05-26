@@ -421,7 +421,7 @@ const ExchangeTable = (props) => {
         }}
       >
         <Box>
-          <Typography sx={{ fontWeight: 700, fontSize: "18px" }}>
+          <Typography sx={{ fontWeight: 600, fontSize: "18px" }}>
             Portfolio Summary
           </Typography>
         </Box>

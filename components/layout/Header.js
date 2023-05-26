@@ -160,12 +160,12 @@ export default function Header() {
               onClick={() => {
                 router.push("login");
               }}
-              sx={{ color: "#FFFFFF", fontWeight: 800 }}
+              sx={{ color: "#FFFFFF", fontWeight: 600 }}
             >
               Login
             </Button>
             <Button
-              sx={{ color: "#FFFFFF", fontWeight: 800 }}
+              sx={{ color: "#FFFFFF", fontWeight: 600 }}
               onClick={() => {
                 router.push("register");
               }}

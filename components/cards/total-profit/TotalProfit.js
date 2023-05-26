@@ -37,8 +37,8 @@ const TotalProfit = (props) => {
             <TotalProfitYellow />
           </div>
           <Stack spacing={1}>
-            <Typography>Total Profit</Typography>
-            <Typography fontSize="24px" color="#4BD569">
+            <Typography fontWeight={500}>Total Profit</Typography>
+            <Typography fontSize="24px" color="#4BD569" fontWeight={600}>
               {props.profit} $
             </Typography>
           </Stack>

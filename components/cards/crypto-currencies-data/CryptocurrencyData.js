@@ -102,7 +102,8 @@ const CryptocurrencyData = (props) => {
     whiteSpace: "nowrap",
   };
   const headingStyle = {
-    fontWeight: "bold",
+    fontWeight: "500",
+    fontSize: "18px",
   };
 
   return (

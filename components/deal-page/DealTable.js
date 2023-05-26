@@ -142,7 +142,7 @@ const DealTable = () => {
             }}
           >
             <Box pt={2} pl={2}>
-              <Typography fontSize={"1.1rem"} fontWeight={600}>
+              <Typography fontSize={"1.1rem"} fontWeight={500}>
                 {data.title}
               </Typography>
             </Box>

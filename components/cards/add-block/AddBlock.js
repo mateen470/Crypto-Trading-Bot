@@ -367,7 +367,7 @@ const AddBlockComponent = (props) => {
     }
   };
 
-  const handlebacktest = async ()=> {
+  const handlebacktest = async () => {
     if (
       botName === "" ||
       exchange === "" ||
@@ -427,7 +427,7 @@ const AddBlockComponent = (props) => {
 
       const newData = await response.json();
       console.log(newData);
-      console.log(newData['body']['_id'])
+      console.log(newData["body"]["_id"]);
       alert("Saved");
       try {
         const response = await fetch("https://dcabot1.herokuapp.com/backtest", {
@@ -436,9 +436,9 @@ const AddBlockComponent = (props) => {
             "Content-Type": "application/json",
           },
           // If you need to send a JSON body, uncomment the following line and replace '{}' with the appropriate JSON object
-          body: JSON.stringify({ strategyId: newData['body']['_id'] }),
+          body: JSON.stringify({ strategyId: newData["body"]["_id"] }),
         });
-  
+
         if (response.ok) {
           const data = await response.json();
           console.log("Success:", data);
@@ -644,7 +644,7 @@ const AddBlockComponent = (props) => {
           {activeTab === "orders" && (
             <>
               <Typography
-                sx={{ mt: 1, fontWeight: 600 }}
+                sx={{ mt: 1, fontWeight: 500 }}
                 color="white"
                 component="h1"
                 variant="h5"
@@ -873,7 +873,7 @@ const AddBlockComponent = (props) => {
             <>
               {" "}
               <Typography
-                sx={{ mt: 3, ml: 1, fontWeight: 600 }}
+                sx={{ mt: 3, ml: 1, fontWeight: 500 }}
                 color="white"
                 component="h1"
                 variant="h5"
@@ -882,10 +882,10 @@ const AddBlockComponent = (props) => {
               </Typography>
               <Box
                 sx={{
-                  background: "linear-gradient(to left,#3E2146,#301631)",
+                  // background: "linear-gradient(to left,#3E2146,#301631)",
                   mt: 2,
                   borderRadius: "5px",
-                  p: 3,
+                  // p: 3,
                   marginBottom: 5,
                 }}
               >
@@ -1071,15 +1071,15 @@ const AddBlockComponent = (props) => {
           {activeTab === "stop-loss" && (
             <Box
               sx={{
-                background: "linear-gradient(to left,#3E2146,#301631)",
+                // background: "linear-gradient(to left,#3E2146,#301631)",
                 mt: 5,
                 borderRadius: "5px",
-                p: 3,
+                // p: 3,
                 marginBottom: 5,
               }}
             >
               <Typography
-                sx={{ mt: 1, fontWeight: 600 }}
+                sx={{ mt: 1, fontWeight: 500 }}
                 color="white"
                 component="h1"
                 variant="h5"
@@ -1153,15 +1153,15 @@ const AddBlockComponent = (props) => {
           {activeTab === "take-profit" && (
             <Box
               sx={{
-                background: "linear-gradient(to left,#3E2146,#301631)",
+                // background: "linear-gradient(to left,#3E2146,#301631)",
                 mt: 5,
                 borderRadius: "5px",
-                p: 3,
+                // p: 3,
                 marginBottom: 5,
               }}
             >
               <Typography
-                sx={{ mt: 1, fontWeight: 600 }}
+                sx={{ mt: 1, fontWeight: 500 }}
                 color="white"
                 component="h1"
                 variant="h5"

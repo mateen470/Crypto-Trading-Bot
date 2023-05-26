@@ -19,7 +19,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { setExchange } from "../../slices/exchange-slice";
 import { setAssets } from "../../slices/asset-slice";
 import { Google } from "../../utils/icons";
-
+import "typeface-poppins";
 const ccxt = require("ccxt");
 
 const ValidationTextField = styled(InputBase)(({ theme }) => ({
@@ -73,7 +73,7 @@ const Login = () => {
         router.push("/verify-token");
       } else {
         fetchAssetsFromUserInfo(true);
-        router.push("/dashboard");
+        router.push("/dashboard?selected=0");
       }
     } else {
       setError("Please enter correct email or password");
