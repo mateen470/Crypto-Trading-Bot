@@ -99,9 +99,10 @@ const Wallet = () => {
                       display: "flex",
                       justifyContent: "center",
                       alignItems: "center",
-                      gap: 1,
+                      gap: 2,
                     }}
                   >
+                  {/* CEHCKING FRO GIT PULL REQUES/.,,, */}
                     <Typography color={"#9F90A2"} fontWeight={500}>
                       {data.available}
                     </Typography>
